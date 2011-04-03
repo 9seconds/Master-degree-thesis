@@ -1,0 +1,116 @@
+% coding: utf-8
+% --------------------------------------------------------------------------------------------------
+% "Синтез оптимального стохастического управления", 2011 год
+% --------------------------------------------------------------------------------------------------
+\documentclass[12pt, a4paper, titlepage, openbib, oneside]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{theorem}
+\usepackage[russian]{varioref}
+\usepackage[pdftex]{graphicx}
+\usepackage{listings}
+
+\frenchspacing
+\fussy
+\raggedbottom
+
+\setlength{\leftmargin}{20mm}
+\setlength{\rightmargin}{10mm}
+\righthyphenmin=2
+\emergencystretch=6pt
+
+
+\newtheorem{teo}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{alg}{Алгоритм}
+\newtheorem{df}{Определение}
+
+
+
+\DeclareMathOperator{\diag}{\mathrm{diag}}
+
+%\includeonly{titlepage,abstract,toc}
+
+\begin{document}
+
+\renewcommand{\bibname}{Список использованной литературы}
+\renewcommand{\chaptername}{Раздел}
+
+% --------------------------------------------------------------------------------------------------
+% команды
+% --------------------------------------------------------------------------------------------------
+
+% перевод строки
+\newcommand{\br}{\vspace{12pt}}
+
+% равно по определению
+\newcommand{\eqdef}{\stackrel{\mathrm{def}}{=}}
+
+% пространство R в степени x
+\newcommand{\Rv}[1]{\mathbb{R}^{#1}}
+
+% матричное пространство R в степени x на y
+\newcommand{\Rs}[2]{\mathbb{R}^{{#1} \times {#2}}}
+
+% математическое ожидание
+\newcommand{\E}{\mathbf{E}}
+
+% эпсилон
+\newcommand{\eps}{\varepsilon}
+
+% сделать текст полужирным
+\newcommand{\strong}[1]{{\fontseries{bx}\selectfont {#1}}}
+
+% частная производная
+\newcommand{\PartDiff}[2]{\frac{\partial {#1}}{\partial {#2}}}
+
+% вторая частная производная
+\newcommand{\PartDiffSecond}[3]{\frac{\partial^2 {#1}}{\partial {#2}\,\partial {#3}}}
+
+% квадратик qed
+\newcommand{\qed}{\vspace{12pt}\hfill \mbox{\raggedright \rule{.1in}{.1in}}}
+
+
+% --------------------------------------------------------------------------------------------------
+% страницы и главы
+% --------------------------------------------------------------------------------------------------
+
+
+
+% титульная страница
+% (готово)
+\include{titlepage}
+
+% краткое описание рассматриваемой темы
+\include{abstract}
+
+% содержание. генерируется автоматически
+\include{toc}
+
+% введение в тему
+\include{ch0-intro}
+
+% математическая постановка задачи.
+\include{ch1-task}
+
+% синтез оптимального управления
+\include{ch2-controlSynthesis}
+
+% методы стохастического управления
+\include{ch3-stochasticControl}
+
+% пример типовой задачи
+\include{ch4-solutionExample}
+
+% заключение
+\include{ch5-outro}
+
+% список литературы
+\include{biblist}
+
+
+\end{document}
