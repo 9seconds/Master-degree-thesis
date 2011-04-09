@@ -226,7 +226,10 @@
 Сформулированная таким образом задача есть задача Больца (TODO). Уравнение Беллмана в этом случае имеет вид
 
 \beq{eq:2/2/2}
-    - \partdiff{\optF}{t} = \frac{1}{2} x^T(t)\mQ(t)x(t) + \frac{1}{2} \optU^T(t)\mR(t)\optU(t) + \biggl(\partdiff{\optF}{x}\biggr)^T\bigl( \mA(t)x(t) + \mB(t)\optU(t) \bigr) \mbox{.}
+\begin{split}
+    - \partdiff{\optF}{t} =& \frac{1}{2} x^T(t)\mQ(t)x(t) + \frac{1}{2} \optU^T(t)\mR(t)\optU(t) + \\
+    &+ \biggl(\partdiff{\optF}{x}\biggr)^T\bigl( \mA(t)x(t) + \mB(t)\optU(t) \bigr) \mbox{.}
+\end{split}
 \eeq
 
 Граничное условие, вытекающее из уравнений~\vref{eq:2/1/17} и~\vref{eq:2/1/21}, сводится к
@@ -258,7 +261,10 @@
 Подставив выражения~\ref{eq:2/2/5} и~\ref{eq:2/2/6} в уравнение Беллмана~\ref{eq:2/2/2}, получим матричное уравнение Риккати
 
 \beq{eq:2/2/7}
-    - \genericdiff{\mP(t)}{t} = -\mP(t)\mB(t)\mR^{-1}(t)\mB^T(t)\mP(t) + \mP(t)\mA(t) + \mA^T(t)\mP(t) + \mQ(t)
+\begin{split}
+    - \genericdiff{\mP(t)}{t} =& -\mP(t)\mB(t)\mR^{-1}(t)\mB^T(t)\mP(t) + \mP(t)\mA(t) + \\
+    &+ \mA^T(t)\mP(t) + \mQ(t)
+\end{split}
 \eeq
 
 с граничным условием
@@ -495,8 +501,8 @@
 
 \beq{eq:2/3/10}
 \begin{split}
-    H & = -\frac{1}{2} \bigl( z(t) - \mC(t)x(t) \bigr)^T\mQ(t)\bigl( z(t) - \mC(t)x(t) \bigr) - \frac{1}{2} \bigl( u^T(t)\mR(t)u(t) \bigr) + \\
-      & + \biggl( \bigl(\mA(t)x(t) \bigr)^T + \bigl(\mB(t)x(t) \bigr)^T \biggr)\psi(t)
+    H & = -\frac{1}{2} \bigl( z(t) - \mC(t)x(t) \bigr)^T\mQ(t)\bigl( z(t) - \mC(t)x(t) \bigr) - \\
+    &- \frac{1}{2} \bigl( u^T(t)\mR(t)u(t) \bigr) + \biggl( \bigl(\mA(t)x(t) \bigr)^T + \bigl(\mB(t)x(t) \bigr)^T \biggr)\psi(t)
 \end{split}
 \eeq
 
