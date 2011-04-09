@@ -25,6 +25,7 @@
 
 
 \newtheorem{teo}{Теорема}
+\newtheorem{statement}{Утверждение}
 \newtheorem{lemma}{Лемма}
 \newtheorem{alg}{Алгоритм}
 \newtheorem{df}{Определение}
@@ -33,7 +34,13 @@
 
 \DeclareMathOperator{\diag}{\mathrm{diag}}
 
-%\includeonly{titlepage,abstract,toc}
+
+
+
+\includeonly{ch2-controlSynthesis}
+
+
+
 
 \begin{document}
 
@@ -45,34 +52,77 @@
 % --------------------------------------------------------------------------------------------------
 
 % перевод строки
-\newcommand{\br}{\vspace{12pt}}
+\newcommand{\br}{ \vspace{12pt} }
 
 % равно по определению
-\newcommand{\eqdef}{\stackrel{\mathrm{def}}{=}}
+\newcommand{\eqdef}{ \stackrel{ \mathrm{def} }{=} }
 
 % пространство R в степени x
-\newcommand{\Rv}[1]{\mathbb{R}^{#1}}
+\newcommand{\Rv}[1]{ \mathbb{R}^{#1} }
 
 % матричное пространство R в степени x на y
-\newcommand{\Rs}[2]{\mathbb{R}^{{#1} \times {#2}}}
+\newcommand{\Rs}[2]{ \mathbb{R}^{{#1} \times {#2}} }
 
 % математическое ожидание
-\newcommand{\E}{\mathbf{E}}
+\newcommand{\E}{ \mathbf{E} }
 
 % эпсилон
-\newcommand{\eps}{\varepsilon}
+\newcommand{\eps}{ \varepsilon }
 
 % сделать текст полужирным
-\newcommand{\strong}[1]{{\fontseries{bx}\selectfont {#1}}}
+\newcommand{\strong}[1]{{ \fontseries{bx}\selectfont {#1}} }
+
+% простая производная
+\newcommand{\genericdiff}[2]{ \frac{d #1}{d #2} }
+
+% простая строчная производная
+\newcommand{\genericlinediff}[2]{ d #1 / d #2 }
 
 % частная производная
-\newcommand{\PartDiff}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\partdiff}[2]{ \frac{\partial {#1}}{\partial {#2}} }
+
+% частная строчная производная
+\newcommand{\partlinediff}[2]{ \partial {#1} / \partial {#2} }
 
 % вторая частная производная
-\newcommand{\PartDiffSecond}[3]{\frac{\partial^2 {#1}}{\partial {#2}\,\partial {#3}}}
+\newcommand{\partdiffsecond}[3]{ \frac{\partial^2 {#1}}{\partial {#2}\,\partial {#3}} }
 
 % квадратик qed
-\newcommand{\qed}{\vspace{12pt}\hfill \mbox{\raggedright \rule{.1in}{.1in}}}
+\newcommand{\qed}{ \vspace{12pt}\hfill \mbox{\raggedright \rule{.1in}{.1in}} }
+
+% каллиграфическое начертание
+\newcommand{\calf}[1]{ \mathcal{#1} }
+
+% прямое начертание
+\newcommand{\sff}[1]{ \mathsf{#1} }
+
+% признак оптимальности
+\newcommand{\optimum}[1]{ #1^{*} }
+
+% сокращение для лейбла
+\newcommand{\lbl}[1]{ \label{#1} }
+
+% начало уравнения
+\newcommand{\beq}[1]{ \begin{equation}\lbl{#1} }
+
+% конец уравнения
+\newcommand{\eeq}{ \end{equation} }
+
+% начало уравнения без номера
+\newcommand{\beqn}{ \begin{equation*} }
+
+% конец уравнения без номера
+\newcommand{\eeqn}{ \end{equation*} }
+
+% начало нумерованного списка
+\newcommand{\benum}{ \begin{enumerate} }
+
+% конец нумерованного списка
+\newcommand{\eenum}{ \end{enumerate} }
+
+% центральная точка
+\newcommand{\centerdot}{~\cdotp}
+
 
 
 % --------------------------------------------------------------------------------------------------
