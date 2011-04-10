@@ -216,7 +216,7 @@
 
 \beq{eq:2/2/2}
 \begin{split}
-    - \partdiff{\optF}{t} =& \frac{1}{2} x^T(t)\m{Q}(t)x(t) + \frac{1}{2} \optU^T(t)\m{R}(t)\optU(t) + \\
+    - \partdiff{\optF}{t} =& \frac{1}{2} x^T(t)\m{Q}(t)x(t) + \frac{1}{2} {\optU}^T(t)\m{R}(t)\optU(t) + \\
     &+ \biggl(\partdiff{\optF}{x}\biggr)^T\bigl( \m{A}(t)x(t) + \m{B}(t)\optU(t) \bigr) \mbox{.}
 \end{split}
 \eeq
@@ -280,7 +280,7 @@
 
 \br
 
-Калман\cite{KALMAN} показал, что при $T \to \infty$ для полностью управляемой линейной стационарной системы и показателя качества
+Калман\cite{KALMAN1} показал, что при $T \to \infty$ для полностью управляемой линейной стационарной системы и показателя качества
 
 \beqn
     \funcF = \frac{1}{2} \int\limits_0^\infty \bigl[ x^T(\tau)\m{Q} x(\tau) + u^T(t)\m{R} u(\tau) \bigr]\,d\tau \mbox{,}
@@ -419,18 +419,18 @@
 Сформулируем теперь \emph{принцип максимума} Понтрягина.
 
 \begin{teo}\lbl{teo:3}
-	Если функция $\optU(t)$ определяет оптимальное управление, а $\optX'(t)$~--- оптимальная траектория, соответствующая $\optU(t)$, согласно уравнению~\ref{eq:2/3/3}, то имеется ненулевая непрерывная векторная функция $\psi'(t)$ такая, что
+	Если функция $\optU(t)$ определяет оптимальное управление, а $\optX\prime(t)$~--- оптимальная траектория, соответствующая $\optU(t)$, согласно уравнению~\ref{eq:2/3/3}, то имеется ненулевая непрерывная векторная функция $\psi\prime(t)$ такая, что
 	\benum
 		\item
 			В любой момент времени $t$ (за исключением, возможно, точек, в которых $f'$ или $u$ являются разрывными) функция Гамильтона вдоль оптимальной траектории $\optX(t)$ достигает максимума. Иначе говоря,
 			\beqn
-				H(\optX', \optU, t, \psi') \geqslant H(\optX', u, t, \psi') \mbox{.}
+				H(\optX\prime, \optU, t, \psi\prime) \geqslant H(\optX\prime, u, t, \psi\prime) \mbox{.}
 			\eeqn
 		
 		\item
 			В любой момент времени $t$ (за исключением, возможно, точек, в которых $f'$ или $u$ являются разрывными) вектор $\psi(t)$ удовлетворяет системе
 			\beq{eq:2/3/5}
-				\dot{\psi}'(t) = -\partdiff{H(x', \optU, t, \psi')}{x'} \biggm|_{x' = \optX(t)} \mbox{.}
+				\dot{\psi}\prime(t) = -\partdiff{H(x\prime, \optU, t, \psi\prime)}{x\prime} \biggm|_{x\prime = \optX(t)} \mbox{.}
 			\eeq
 		
 		\item
