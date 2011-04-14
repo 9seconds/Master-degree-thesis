@@ -26,7 +26,6 @@
 
 \newtheorem{teo}{Теорема}
 \newtheorem{statement}{Утверждение}
-\newtheorem{lemma}{Лемма}
 \newtheorem{alg}{Алгоритм}
 \newtheorem{df}{Определение}
 
@@ -38,7 +37,7 @@
 
 
 
-%\includeonly{ch3-stochasticControl,biblist}
+\includeonly{ch2-controlSynthesis,ch4-solutionExample}
 
 
 
@@ -140,12 +139,20 @@
 % конец нумерованного списка
 \newcommand{\eenum}{ \end{enumerate} }
 
+% начало алгоритма
+\newcommand{\balgo}[1]{ \begin{alg}\lbl{#1}~ }
+
+% конец алгоритма
+\newcommand{\ealgo}{ \end{alg} }
+
 % центральная точка
 \newcommand{\emptyarg}{ \,\cdotp }
 
 % система уравнений
-\newcommand{\eqsystem}[1]{ \left\{ \begin{array}{ll} #1 \end{array}\right. }
+\newcommand{\eqsystem}[1]{ \begin{cases} #1 \end{cases} }
 
+% матрица
+\newcommand{\matr}[1]{ \begin{bmatrix} #1 \end{bmatrix} }
 
 
 
