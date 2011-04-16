@@ -13,6 +13,8 @@
 \usepackage[russian]{varioref}
 \usepackage[pdftex]{graphicx}
 \usepackage{listings}
+\usepackage[centerlast,it]{caption2}
+
 
 \frenchspacing
 \fussy
@@ -30,10 +32,6 @@
 \newtheorem{alg}{Алгоритм}
 \newtheorem{df}{Определение}
 
-% счетчик рисунков
-\newcounter{figure_counter}
-
-
 
 \DeclareMathOperator{\diag}{\mathrm{diag}}
 \DeclareMathOperator{\tr}{\mathrm{tr}}
@@ -50,6 +48,9 @@
 
 \renewcommand{\bibname}{Список использованной литературы}
 \renewcommand{\chaptername}{Раздел}
+
+\renewcommand{\captionlabeldelim}{.}
+
 
 
 
@@ -150,16 +151,13 @@
 \newcommand{\ealgo}{ \end{alg} }
 
 % начало рисунка
-\newcommand{\bfig}[1]{ \begin{figure}\lbl{#1} \addtocounter{figure_counter}{1} }
+\newcommand{\bfig}[1]{ \begin{figure}\lbl{#1}\center }
 
 % конец рисунка
 \newcommand{\efig}{ \end{figure} }
 
-% подпись в рисунке
-\newcommand{\figlabel}[1]{ \begin{center} \emph{Рис \arabic{figure_counter}. #1} \end{center} }
-
 % вставка рисунка
-\newcommand{\addfigure}[3]{ \bfig{#1} \input{fig_#2} \figlabel{#3} \efig }
+\newcommand{\addfigure}[3]{ \bfig{#1} \input{fig_#2} \caption{\textit{#3}} \efig }
 
 % центральная точка
 \newcommand{\emptyarg}{ \,\cdotp }
