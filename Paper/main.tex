@@ -13,7 +13,7 @@
 \usepackage[russian]{varioref}
 \usepackage[pdftex]{graphicx}
 \usepackage{listings}
-\usepackage[centerlast,it]{caption2}
+\usepackage[font=it,labelsep=period,format=hang]{caption}
 
 
 \frenchspacing
@@ -48,8 +48,6 @@
 
 \renewcommand{\bibname}{Список использованной литературы}
 \renewcommand{\chaptername}{Раздел}
-
-\renewcommand{\captionlabeldelim}{.}
 
 
 
@@ -157,7 +155,7 @@
 \newcommand{\efig}{ \end{figure} }
 
 % вставка рисунка
-\newcommand{\addfigure}[3]{ \bfig{#1} \input{fig_#2} \caption{\textit{#3}} \efig }
+\newcommand{\addfigure}[3]{ \bfig{#1} \input{fig_#2} \caption{#3} \efig }
 
 % центральная точка
 \newcommand{\emptyarg}{ \,\cdotp }
