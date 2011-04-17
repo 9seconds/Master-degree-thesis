@@ -109,6 +109,9 @@
 % полужирная капитель
 \newcommand{\bff}[1]{ \mathbf{#1} }
 
+% код
+\newcommand{\code}[1]{\texttt{#1}}
+
 % вектор или матрица
 \newcommand{\m}[1]{ \bff{#1} }
 
@@ -142,6 +145,12 @@
 % конец нумерованного списка
 \newcommand{\eenum}{ \end{enumerate} }
 
+% начало теоремы
+\newcommand{\bteo}[1]{ \begin{teo}\lbl{#1} }
+
+% конец теоремы
+\newcommand{\eteo}{ \end{teo} }
+
 % начало алгоритма
 \newcommand{\balgo}[1]{ \begin{alg}\lbl{#1}~ }
 
@@ -166,6 +175,8 @@
 % матрица
 \newcommand{\matr}[1]{ \begin{bmatrix} #1 \end{bmatrix} }
 
+% вставка командной строки
+\newcommand{\cli}[1]{ \begin{center} \code{#1} \end{center} }
 
 
 % --------------------------------------------------------------------------------------------------
