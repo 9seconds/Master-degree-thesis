@@ -39,7 +39,7 @@
 
 
 
-\includeonly{ch2-controlSynthesis,ch4-solutionExample}
+%\includeonly{ch2-controlSynthesis,ch4-solutionExample}
 
 
 
@@ -158,13 +158,13 @@
 \newcommand{\ealgo}{ \end{alg} }
 
 % начало рисунка
-\newcommand{\bfig}[1]{ \begin{figure}\lbl{#1}\center }
+\newcommand{\bfig}{ \begin{figure}\center }
 
 % конец рисунка
 \newcommand{\efig}{ \end{figure} }
 
 % вставка рисунка
-\newcommand{\addfigure}[3]{ \bfig{#1} \input{fig_#2} \caption{#3} \efig }
+\newcommand{\addfigure}[3]{ \bfig \input{fig_#2} \caption{#3} \lbl{#1} \efig }
 
 % центральная точка
 \newcommand{\emptyarg}{ \,\cdotp }
