@@ -40,7 +40,7 @@
     Семейство случайных величин, параметризованное параметров $t$, интерпретируемым как время, будем называть случайным процессом и обозначать как
     
     \beqn
-    	\xi_t \eqdef \xi(t, \omega) \in \setX \subset \Rv{1}
+    	\xi_t \eqdef \xi(t, \omega) \in \setX \subset \Rv{1} \text{,}
     \eeqn
 
     где $t \in \setT \subset \Rv{1}$~--- временной параметр; $\setT$~--- множество определения, а $\setX$~--- множество значений случайного процесса $\xi_t$.
@@ -53,7 +53,7 @@
 Случайный процесс называется \emph{гауссовским}, если все его совместные плотности распределения являются гауссовскими:
 
 \beqn
-	\prob_\xi(x1, x2, \ldots, x_k, t_1, t_2, \ldots, t_k) = \frac{1}{\sqrt{(2\pi)^n \det(\mSig)}}\exp\biggl( -\frac{(x-m)^T\mSig^{-1}(x-m)}{2} \biggr) \mbox{,}
+	\prob_\xi(x1, x2, \ldots, x_k, t_1, t_2, \ldots, t_k) = \frac{1}{\sqrt{(2\pi)^n \det(\mSig)}}\exp\biggl( -\frac{(x-m)^T\mSig^{-1}(x-m)}{2} \biggr) \text{,}
 \eeqn
 
 где $x = (x_1, x_2, \ldots, x_k)^T$; $m = (m_1, m_2, \ldots, m_k)^T$; $m_i = \E x_i$; $\mSig = \mSig^T > 0$~--- матрица ковариаций.
@@ -64,7 +64,7 @@
 	Случайный процесс $\xi_t$, определенный при всех $t \in \setTime$, называется непрерывным в момент времени $t^{*} \in \setTime$ в вероятностном смысле, если для любой последовательности $\{t_k\}_{k=1}^\infty$, принадлежащей $[0, T]$ и сходящейся к $t^{*}$ при $k \to \infty$, справедливо предельное соотношение
 	
 	\beqn
-		\xi_{t_k} \to \xi_{t^{*}} \mbox{ при } t_k \to t^{*}  \mbox{,}
+		\xi_{t_k} \to \xi_{t^{*}} \text{ при } t_k \to t^{*}  \text{,}
 	\eeqn
 	
 	понимаемое в соответствующем вероятностном смысле.
@@ -78,7 +78,7 @@
 	Случайный процесс $\xi_t$, определеный для всех $t \in \setTime$, называется дифференцируемым в момент $t \in \setTime$ в одном из вероятностных смыслов, если существует левая часть следующего предельного соотношения:
 	
 	\beqn
-		\lim\limits_{\delta \to 0} \frac{\xi_{t+\delta} - \xi_t}{\delta} = \genericdiff{\xi_t}{t} \mbox{,}
+		\lim\limits_{\delta \to 0} \frac{\xi_{t+\delta} - \xi_t}{\delta} = \genericdiff{\xi_t}{t} \text{,}
 	\eeqn
 	
 	понимаемого в этом вероятностном смысле. Процесс $\xi_t$ будем называть дифференцируемым на промежутке $[t_1, t_2] \subset \setTime$ в данном вероятностном смысле, если он дифференцируем в этом смысле при всех $t \in [t_1, t_2]$.
@@ -98,7 +98,7 @@
 			$\E \xi_t = 0$,
 		
 		\item
-			$\E (\xi_{t_2} - \xi_{t_1})^2 - \sigma_\xi^2 |t_2 - t_1| \mbox{, где } \sigma_\xi^2 > 0$,
+			$\E (\xi_{t_2} - \xi_{t_1})^2 - \sigma_\xi^2 |t_2 - t_1| \text{, где } \sigma_\xi^2 > 0$,
 		
 		\item
 			$\xi_{t_1}$ и $\xi_{t_2} - \xi_{t_1}$ ($t_2 > t_1$) имеют нормальное распредление при всех $t_1, t_2 \in \setTime$.
@@ -108,7 +108,7 @@
 Если $\sigma_\xi^2$ и $\xi_0 = 0$, то винеровский процесс называется \emph{стандартным}. Поскольку приращения $\xi_{t_2} - \xi_{t_1}$ ($t_2 > t_1$) винеровского процесса имеют нормальное распределение, то их функция распределения определяется соотношением
 
 \beqn
-	\prob(\xi_{t_2} - \xi_{t_1} < x) = \frac{1}{\sigma_\xi \sqrt{2\pi (t_2 - t_1)}} \int\limits_\infty^x e^{-\frac{u^2}{2\sigma_xi^2(t_2-t_1)}}\,du \mbox{.}
+	\prob(\xi_{t_2} - \xi_{t_1} < x) = \frac{1}{\sigma_\xi \sqrt{2\pi (t_2 - t_1)}} \int\limits_\infty^x e^{-\frac{u^2}{2\sigma_xi^2(t_2-t_1)}}\,du \text{.}
 \eeqn
 
 Известно, что винеровский случайный процесс является непрерывным с вероятностью 1 случайным процессом.
@@ -151,7 +151,7 @@
 Введем на классе $\setM$ норму вида
 
 \beqn
-	\| \xi \|_{2,T} = \sqrt{ \int_0^T \E \Bigl\{ \bigl( \xi(t, \omega) \bigr)^2 \Bigr\}\,dt } \mbox{.}
+	\| \xi \|_{2,T} = \sqrt{ \int_0^T \E \Bigl\{ \bigl( \xi(t, \omega) \bigr)^2 \Bigr\}\,dt } \text{.}
 \eeqn
 
 Считаем две функции $\xi$ и $\eta$ из класса $\setM$ эквивалентными, если $\| \xi - \eta \|_{2,T} = 0$.
@@ -161,20 +161,20 @@
 При этом интеграл в требовании 3 понимается как
 
 \beqn
-	\int\limits_0^T \E \Bigl\{ \bigl( \xi(t, \omega) \bigr)^2 \Bigr\}\,dt = \sum\limits_{j=0}^{N-1} \E \bigl\{ (\xi_j)^2 \bigr\}(\tau_{j+1} - \tau{j}) \mbox{.}
+	\int\limits_0^T \E \Bigl\{ \bigl( \xi(t, \omega) \bigr)^2 \Bigr\}\,dt = \sum\limits_{j=0}^{N-1} \E \bigl\{ (\xi_j)^2 \bigr\}(\tau_{j+1} - \tau{j}) \text{.}
 \eeqn
 
 Обозначим через $\setK$ множество всех ступенчатых функций в $\setM$. Для произвольной ступенчатой функции $\xi$ из класса $\setK$ определим \emph{стохастический интеграл Ито} следующим образом:
 
 \beqn
-	\int\limits_0^T \xi_\tau\,df_\tau \eqdef \sum\limits_{j=0}^{N-1} \xi_j(\omega)\bigl( f(\tau_{j+1}, \omega) - f(\tau_j, \omega) \bigr) \mbox{.}
+	\int\limits_0^T \xi_\tau\,df_\tau \eqdef \sum\limits_{j=0}^{N-1} \xi_j(\omega)\bigl( f(\tau_{j+1}, \omega) - f(\tau_j, \omega) \bigr) \text{.}
 \eeqn
 
 \begin{df}\lbl{df:7}
 	Стохастическим интегралом Ито от функции $\xi \in \setM$ назовем среднеквадратический предел последовательности ступенчатых функций:
 	
 	\beqn
-		\int\limits_0^T \xi_\tau\,df_\tau = \lim\limits_{N \to \infty} \sum\limits_{j=0}^{N-1} \xi\idxB{N}\bigl( f(\tau\idxB{N}_{j+1}, \omega) - f(\tau\idxB{N}_j, \omega) \bigr) \mbox{,} 
+		\int\limits_0^T \xi_\tau\,df_\tau = \lim\limits_{N \to \infty} \sum\limits_{j=0}^{N-1} \xi\idxB{N}\bigl( f(\tau\idxB{N}_{j+1}, \omega) - f(\tau\idxB{N}_j, \omega) \bigr) \text{,} 
 	\eeqn
 	
 	где $\xi\idxB{N}(t, \omega)$~--- произвольная ступенчатая функция из $\setK$, сходящаяся по норме $\| \emptyarg \|_{2,T}$ к функции $\xi(t, \omega)$.
@@ -191,7 +191,7 @@
 Рассмотрим случайные процессы $a_t \in \Rv{1}$ и $\m{b}_t\idxB{i} \in \Rv{1}$ ($i = 1, 2, \ldots, m$) из класса $\setM$. Определим случайный процесс $\eta_t$ при всех $t \in \setTime$ в виде:
 
 \beq{eq:3/1/1}
-	\eta_t = \eta_0 + \int\limits_0^t a_\tau\,d\tau + \sum\limits_{i=1}^m \int\limits_0^t \m{b}_\tau\idxB{i}\,d\m{f}_\tau\idxB{i} \mbox{,}
+	\eta_t = \eta_0 + \int\limits_0^t a_\tau\,d\tau + \sum\limits_{i=1}^m \int\limits_0^t \m{b}_\tau\idxB{i}\,d\m{f}_\tau\idxB{i} \text{,}
 \eeq
 
 где $\eta_0$~--- случайная величина, стохастически независимая от приращений $\m{f}_\tau-\m{f}_0$ винеровского процесса $\m{f}_t$ при всех $\tau \in \setTime$.
@@ -203,7 +203,7 @@
 Из свойства аддитивности стохастических интегралов вытекает следующее представление для процесса Ито:
 
 \beq{eq:3/1/2}
-	\eta_s = \eta_t + \int\limits_t^s a_\tau\,d\tau + \sum\limits_{i=1}^m \int\limits_0^t \m{b}_\tau\idxB{i}\,d\m{f}_\tau\idxB{i} \mbox{ с вероятностью 1,}
+	\eta_s = \eta_t + \int\limits_t^s a_\tau\,d\tau + \sum\limits_{i=1}^m \int\limits_0^t \m{b}_\tau\idxB{i}\,d\m{f}_\tau\idxB{i} \text{ с вероятностью 1,}
 \eeq
 
 справедливое для всех $s, t \in \setTime$ и $s \geqslant t$.
@@ -211,7 +211,7 @@
 Рассмотрим многомерный случай. Пусть существуют случайные процессы $\m{a}_t \in \Rv{n}$ и $\m{B}_t \in \Rs{n}{m}$, каждая компонента которых должна принадлежать классу $\setM$. Определим векторный случайный процесс $\m{\eta}_t \in \Rv{n}$ при всех $t \in \setTime$ в виде:
 
 \beq{eq:3/1/3}
-	\m{\eta}_t = \m{\eta}_0 + \int\limits_0^t \m{a}_\tau\,d\tau + \int\limits_0^t \m{B}_\tau\,d\m{f}_\tau \mbox{,}
+	\m{\eta}_t = \m{\eta}_0 + \int\limits_0^t \m{a}_\tau\,d\tau + \int\limits_0^t \m{B}_\tau\,d\m{f}_\tau \text{,}
 \eeq
 
 где случайная векторная величина $\m{\eta}_0 \in \Rv{n}$ является стохастически независимой от приращений $\m{f}_\tau - \m{f}_0$ винеровского процесса $\m{f}_t$ при всех $\tau \in \setTime$.
@@ -223,7 +223,7 @@
 Соотношение~\ref{eq:3/1/2} обобщается и на случай векторного процесса Ито:
 
 \beq{eq:3/1/4}
-	\eta_s = \eta_t + \int\limits_t^s \m{a}_\tau\,d\tau + \int\limits_0^t \m{B}_\tau\,d\m{f}_\tau \mbox{ с вероятностью 1,}
+	\eta_s = \eta_t + \int\limits_t^s \m{a}_\tau\,d\tau + \int\limits_0^t \m{B}_\tau\,d\m{f}_\tau \text{ с вероятностью 1,}
 \eeq
 
 справедливое для всех $s, t \in \setTime$ и $s \geqslant t$.
@@ -233,13 +233,13 @@
 Процессы Ито тесно связаны со стохастическими дифференциальными уравнениями Ито. Действительно, пусть задано дифференциальное уравнение
 
 \beq{eq:3/1/5}
-	dx_t = a(x_t, t)dt + \sigma(x_t, t)df_t \mbox{; } x_0 = x(0, \omega) \mbox{,}
+	dx_t = a(x_t, t)dt + \sigma(x_t, t)df_t \text{; } x_0 = x(0, \omega) \text{,}
 \eeq
 
 где $x_t \in \Rv{1}$~--- случайный процесс, являющийся решением уравнения~\ref{eq:3/1/5}; $a(x, t)$ и $\sigma(x, t) \in Rv{1}$~--- измеримые при всех $(x, t) \in \Rv{1} \times \setTime$ функции. Тогда это уравнение может быть переписано в интегральном виде
 
 \beq{eq:3/1/6}
-	x_t = x_0 + \int\limits_0^t a(x_\tau, \tau)\,d\tau + \int\limits_0^t \sigma(x_\tau, \tau)\,df_\tau \mbox{; } x_0 = x(0, \omega) \mbox{.}
+	x_t = x_0 + \int\limits_0^t a(x_\tau, \tau)\,d\tau + \int\limits_0^t \sigma(x_\tau, \tau)\,df_\tau \text{; } x_0 = x(0, \omega) \text{.}
 \eeq
 
 Второй интеграл в правой части~\ref{eq:3/1/6} может пониматься в смысле Ито, Стратоновича или как $\theta$-интеграл\cite{KUZNETCOV}. Пусть интеграл $\int_0^t \sigma(x_\tau, \tau)\,df_\tau$ является стохастическим интегралом Ито, тогда уравнение~\ref{eq:3/1/5} и соответствующее ему уравнение~\ref{eq:3/1/6} называются стохастическими дифференциальными уравнениями Ито.
@@ -255,13 +255,13 @@
 Пусть уравнение состояния динамической системы представляет собой систему стохастических дифференциальных уравнений Ито
 
 \beq{eq:3/2/1}
-	d\m{x}_t = \m{a}(\m{x}_t, \m{u}, t)dt + \m{\Sigma}(\m{x}_t, \m{u}, t)d\m{f}_t \mbox{,}
+	d\m{x}_t = \m{a}(\m{x}_t, \m{u}, t)dt + \m{\Sigma}(\m{x}_t, \m{u}, t)d\m{f}_t \text{,}
 \eeq
 
 где $\m{x}_t \in \Rv{n}$~--- случайный процесс, являющийся решением уравнения~\ref{eq:3/2/1}; $\m{a} \in \Rv{n}$, $\m{\Sigma} \in \Rv{n}$ представляют собой векторные функции сноса и диффузии соответственно; $\m{f}_t$~--- стандартный винеровский процесс, моделирующий белый шум; $\m{u} \in \Rv{k}$~--- управляющее воздействие, которое выбирается из условия минимизации функционала вида
 
 \beq{eq:3/2/2}
-	\funcF(\m{x}, \m{u}, s) = \E \Biggl\{ Q(\m{x}_\tau, \tau) + \int\limits_s^\tau F(\m{x}_t, \m{u}, t)\,dt~\Biggm|~ \m{x}_s = \m{x} \Biggr\} \mbox{,}
+	\funcF(\m{x}, \m{u}, s) = \E \Biggl\{ Q(\m{x}_\tau, \tau) + \int\limits_s^\tau F(\m{x}_t, \m{u}, t)\,dt~\Biggm|~ \m{x}_s = \m{x} \Biggr\} \text{,}
 \eeq
 
 где $Q$, $F$~--- известные функции, а $\tau$, например, постоянный момент времени.
@@ -270,9 +270,9 @@
 
 \beqarr
 	\lbl{eq:3/2/3}
-		\min\limits_{\m{u} \in \Rv{k}} \bigl\{ F(\m{x}, \m{u}, s) + L_u \funcH(\m{x}, s) \bigr\} = 0 \mbox{;} \\
+		\min\limits_{\m{u} \in \Rv{k}} \bigl\{ F(\m{x}, \m{u}, s) + L_u \funcH(\m{x}, s) \bigr\} = 0 \text{;} \\
 	\lbl{eq:3/2/4}
-		\funcH(\m{x}, T) = Q(\m{x}, T) \mbox{,}
+		\funcH(\m{x}, T) = Q(\m{x}, T) \text{,}
 \eeqarr
 
 где предполагается, что $\tau = T$, а оператор $L_u\argEmpty$ имеет вид
@@ -280,7 +280,7 @@
 \beq{eq:3/2/5}
 \begin{split}
 	L_u\argEmpty = \partdiff{\argEmpty}{s} &+ \sum\limits_{i=1}^n\m{a}\idxB{i}(\m{x}, \m{u}, s)\partdiff{\argEmpty}{\m{x}\idxB{i}} + \\
-	&+ \frac{1}{2} \sum\limits_{i=1}^n \sum\limits_{j=1}^n \m{D}\idxB{ij}(\m{x}, \m{u}, s)\partdiffsecond{\argEmpty}{\m{x}\idxB{i}}{\m{x}\idxB{j}} \mbox{,}
+	&+ \frac{1}{2} \sum\limits_{i=1}^n \sum\limits_{j=1}^n \m{D}\idxB{ij}(\m{x}, \m{u}, s)\partdiffsecond{\argEmpty}{\m{x}\idxB{i}}{\m{x}\idxB{j}} \text{,}
 \end{split}
 \eeq
 
@@ -293,13 +293,13 @@
 Рассмотрим линейно-квадратичную проблему стохастического управления, то есть проблему нахождения управления $\m{u}(\m{x}_t, t)$ марковского типа, которое доставляет минимум следующему функционалу:
 
 \beq{eq:3/2/6}
-	\funcF(\m{x}, \m{u}, s) = \E \Biggl\{ \m{x}_T\m{R}\m{x}_T^T + \int\limits_s^T \bigr( \m{x}_t^T\m{C}(t)\m{x}_t + \m{u}^T\m{P}(t)\m{u} \bigl)\,dt~\Biggm|~ \m{x}_s = \m{x} \Biggr\} \mbox{,}
+	\funcF(\m{x}, \m{u}, s) = \E \Biggl\{ \m{x}_T\m{R}\m{x}_T^T + \int\limits_s^T \bigr( \m{x}_t^T\m{C}(t)\m{x}_t + \m{u}^T\m{P}(t)\m{u} \bigl)\,dt~\Biggm|~ \m{x}_s = \m{x} \Biggr\} \text{,}
 \eeq
 
 где $\m{C}(t), \m{R} \in \Rs{n}{n}$, $\m{P}(t) \in \Rs{k}{k}$, а $\m{x}_t \in \Rv{n}$~--- решение следующей системы стохастических дифференциальных уравнений.
 
 \beq{eq:3/2/7}
-	d\m{x}_t = \bigl( \m{A}(t)\m{x}_t + \m{B}(t)\m{u}(\m{x}_t, t) \bigr)dt + \m{\Sigma}(t)d\m{w}_t \mbox{,}
+	d\m{x}_t = \bigl( \m{A}(t)\m{x}_t + \m{B}(t)\m{u}(\m{x}_t, t) \bigr)dt + \m{\Sigma}(t)d\m{w}_t \text{,}
 \eeq
 
 где $\m{A}(t) \in \Rs{n}{n}$, $\m{B}(t) \in \Rs{n}{k}$, $\m{\Sigma} \in \Rs{n}{m}$, а $\m{w}_t \in \Rv{m}$~--- стандартный винеровский процесс с независимыми компонентами $\m{w}\idxB{i}_t$ ($i = 1, 2, \ldots, m$). Кроме этого, предполагается, что все зависящие от $t$ матрицы непрерывны. $\m{C}(t)$ и $\m{R}$~--- симметричные неотрицательно определенные матрицы, а матрица $\m{P}(t)$~--- симметричная положительно определенная.
@@ -309,23 +309,23 @@
 \beq{eq:3/2/8}
 \begin{split}
 	\partdiff{\funcH}{s} + \m{x}^T\m{C}(s)\m{x} &+ \sum\limits_{j=1}^n \bigl( \m{A}(s)\m{x} \bigr)\idxB{j}\partdiff{\funcH}{\m{x}\idxB{j}} + \frac{1}{2} \partdiffsecond{\funcH}{\m{x}\idxB{i}}{\m{x}\idxB{j}} + \\
-	&+ \min\limits_{\m{u} \in \Rv{k}} \Bigl\{ \m{u}^T\m{P}(t)\m{u} + \sum\limits_{j=1}^n \bigl( \m{B}(s)\m{u} \bigr)\idxB{j}\partdiff{\funcH}{\m{x}\idxB{j}} \Bigr\} = 0 \mbox{,}
+	&+ \min\limits_{\m{u} \in \Rv{k}} \Bigl\{ \m{u}^T\m{P}(t)\m{u} + \sum\limits_{j=1}^n \bigl( \m{B}(s)\m{u} \bigr)\idxB{j}\partdiff{\funcH}{\m{x}\idxB{j}} \Bigr\} = 0 \text{,}
 \end{split}
 \eeq
 
 где $\m{D} = \m{\Sigma}(t)\m{\Sigma}^T(t)$, а граничное условие имеет вид:
 
 \beq{eq:3/2/9}
-	\funcH(T, \m{x}) = \m{x}^T\m{R}\m{x} \mbox{.}
+	\funcH(T, \m{x}) = \m{x}^T\m{R}\m{x} \text{.}
 \eeq
 
 В\cite{KLOEDEN}, в частности, показано, что оптимальное управление и минимальное значение функционала $\funcF(\m{x}, \m{u}, s)$ имеют в этой задаче следующий вид:
 
 \beqarr
 	\lbl{eq:3/2/10}
-		\m{u}(\m{x}, s) = \m{P}^{-1}(s)\m{B}(s)\m{x} \mbox{;} \\
+		\m{u}(\m{x}, s) = \m{P}^{-1}(s)\m{B}(s)\m{x} \text{;} \\
 	\lbl{eq:3/2/11}
-		\funcH(\m{x}, s) = \m{x}^T\m{S}\m{x} + \int\limits_s^T \tr \bigl\{ \m{\Sigma}(t)\m{\Sigma}^T(t)\m{S}(t) \bigr\}\,dt \mbox{,}
+		\funcH(\m{x}, s) = \m{x}^T\m{S}\m{x} + \int\limits_s^T \tr \bigl\{ \m{\Sigma}(t)\m{\Sigma}^T(t)\m{S}(t) \bigr\}\,dt \text{,}
 \eeqarr
 
 где $\tr$~--- след\footnote{ Сумма диагональных элементов. } матрицы; $\m{S}(s) \in \Rs{n}{n}$~--- симметричная положительно определенная и непрерывно дифференцируемая матрица, которая удовлетворяет следующему матричному уравнению Риккати:
@@ -337,7 +337,7 @@
 с начальным условием
 
 \beq{eq:3/2/13}
-	\m{S}(T) = \m{R} \mbox{.}
+	\m{S}(T) = \m{R} \text{.}
 \eeq
 
 Таким образом, если удается решить (хотя бы численно) уравнение Риккати~\ref{eq:3/2/12}, то по формулам~\ref{eq:3/2/10} и~\ref{eq:3/2/11} можно найти оптимальное управление и минимальное значение функционала.
@@ -372,7 +372,7 @@
 
 \beq{eq:3/3/1}
     \eqsystem{
-		\m{a}(\m{0}, t) \equiv 0 \mbox{,} \\
+		\m{a}(\m{0}, t) \equiv 0 \text{,} \\
 		\m{\Sigma}(\m{0}, t) \equiv 0    
     }
 \eeq
@@ -387,7 +387,7 @@
 	Невозмущенное движение системы $\m{x}_t = \m{0}$ будем называть устойчивым по вероятности или стохастически устойчивым при $t \geqslant t_0$, если для любых $\eps > 0$ и $t_0 \geqslant 0$
 
 	\beqn
-		\lim\limits_{\m{x}_0 \to \m{0}} \prob \biggl( \sup\limits_{t \geqslant t_0} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| \geqslant \eps \biggr) = 0 \mbox{,}
+		\lim\limits_{\m{x}_0 \to \m{0}} \prob \biggl( \sup\limits_{t \geqslant t_0} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| \geqslant \eps \biggr) = 0 \text{,}
 	\eeqn
 
 	где $\m{x}^{\m{x}_0, t_0}_t$~--- такое решение уравнения~\ref{eq:3/2/1}, что $\m{x}_{t_0} = \m{x}_0$.
@@ -397,7 +397,7 @@
 	Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется асимптотически устойчивым по вероятности или асимптотически стохастически устойчивым, если оно стохастически устойчиво и, кроме того,
 	
 	\beqn
-		\lim\limits_{\m{x}_0 \to \m{0}} \prob \biggl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \biggr) = 1 \mbox{.}
+		\lim\limits_{\m{x}_0 \to \m{0}} \prob \biggl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \biggr) = 1 \text{.}
 	\eeqn
 \end{df}
 
@@ -407,7 +407,7 @@
 	Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется асимптотически стохастически устойчивым в целом, если оно стохастически устойчио и, кроме того, для всех $|\m{x}_0| < \infty$
 	
 	\beqn
-		\prob \biggl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \biggr) = 1 \mbox{.}
+		\prob \biggl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \biggr) = 1 \text{.}
 	\eeqn
 \end{df}
 
@@ -417,7 +417,7 @@
 	Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется устойчивым в среднем степени $p$ ($p > 0$) или $p$-устойчивым, если для любых $\eps > 0$ и $t_0 \geqslant 0$ найдется $\delta = \delta(t_0, \eps) > 0$ такое, что
 	
 	\beqn
-		\E \Bigl\{ \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr|^p \Bigr\} < \eps \mbox{ для всех } t \geqslant t_0 \mbox{ и } |\m{x}_0| < \delta \mbox{.}
+		\E \Bigl\{ \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr|^p \Bigr\} < \eps \text{ для всех } t \geqslant t_0 \text{ и } |\m{x}_0| < \delta \text{.}
 	\eeqn
 \end{df}
 
@@ -425,7 +425,7 @@
 	Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется асимптотически устойчивым в среднем степени $p$ ($p > 0$) или асимптотически $p$-устойчивым, если оно $p$-устойчиво и существует $\delta_0 = \delta_0(t_0) > 0$, такое, что
 	
 	\beqn
-		\lim\limits_{t \to \infty} \E \Bigl\{ \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr|^p \Bigr\} = 0 \mbox{ для всех } |\m{x}_0| < \delta_0 \mbox{.}
+		\lim\limits_{t \to \infty} \E \Bigl\{ \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr|^p \Bigr\} = 0 \text{ для всех } |\m{x}_0| < \delta_0 \text{.}
 	\eeqn
 \end{df}
 
@@ -433,7 +433,7 @@
 	Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется экспоненциально $p$-устойчивым, если существуют постоянные $\gamma > 0$ и $\alpha > 0$, такие, что
 	
 	\beqn
-		\E \Bigl\{ \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr|^p \Bigr\} < \gamma|\m{x}_0|^pe^{-\alpha(t-t_0)} \mbox{ для всех } t \geqslant t_0 \mbox{.}
+		\E \Bigl\{ \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr|^p \Bigr\} < \gamma|\m{x}_0|^pe^{-\alpha(t-t_0)} \text{ для всех } t \geqslant t_0 \text{.}
 	\eeqn
 \end{df}
 
@@ -450,7 +450,7 @@
 \beq{eq:3/3/2}
 \begin{split}
 	\funcV(\m{x}_t, t) - \funcV(\m{x}_{t_0}, t_0) &= \int\limits_{t_0}^t L\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\tau + \\
-	&+ \sum\limits_{i=1}^m \int\limits_{t_0}^t \m{G}\idxB{i}_0\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\m{f}\idxB{i}_\tau \mbox{ с вероятностью 1,}
+	&+ \sum\limits_{i=1}^m \int\limits_{t_0}^t \m{G}\idxB{i}_0\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\m{f}\idxB{i}_\tau \text{ с вероятностью 1,}
 \end{split}
 \eeq
 
@@ -466,13 +466,13 @@
 и при $i = 1, 2, \ldots, m$
 
 \beq{eq:3/3/4}
-	G\idxB{i}\argEmpty = \sum_{j=1}^n \m{\Sigma}\idxB{ji}(\m{x}, t) \partdiff{\argEmpty}{\m{x}\idxB{j}} \mbox{.}
+	G\idxB{i}\argEmpty = \sum_{j=1}^n \m{\Sigma}\idxB{ji}(\m{x}, t) \partdiff{\argEmpty}{\m{x}\idxB{j}} \text{.}
 \eeq
 
 Как можно видеть, в стохастическом случае роль первой производной $\funcV(\m{x}, t)$ по $\m{x}$ в силу уравнения движения играет $L\bigl\{ \funcV(\m{x}_s, s) \bigr\}$. Будем считать, что при $\m{x} \neq \m{0}$ и $t \geqslant 0$ выполняется неравенство
 
 \beq{eq:3/3/5}
-	L\bigl\{ \funcV(\m{x}_s, s) \bigr\} \leqslant 0 \mbox{.}
+	L\bigl\{ \funcV(\m{x}_s, s) \bigr\} \leqslant 0 \text{.}
 \eeq
 
 Функцию $\funcV(\m{x}, t)$, обладающую перечисленными выше свойствами, будем называть \emph{стохастической функцией Ляпунова}.
@@ -480,7 +480,7 @@
 На стохастическую функцию Ляпунова могут также накладываться и некоторые дополнительные ограничения. Далее, используя~\ref{eq:3/3/2} и~\ref{eq:3/3/5} и свойства интеграла Ито, получаем
 
 \beq{eq:3/3/6}
-	\E \bigl\{ \funcV(\m{x}_t, t) \bigm| \funcF_{t_0} \bigr\} \leqslant \funcV(\m{x}_{t_0}, t_0) \mbox{ с вероятностью 1.}
+	\E \bigl\{ \funcV(\m{x}_t, t) \bigm| \funcF_{t_0} \bigr\} \leqslant \funcV(\m{x}_{t_0}, t_0) \text{ с вероятностью 1.}
 \eeq
 
 Таким образом, $\funcV(\m{x}_t, t)$~--- супермартингал. Если $\m{y}_s$ ($s \geqslant 0$)~--- мартингал и $\E \bigl\{ |\m{y}_s|^p \bigr\} < \infty$, то справедливо хорошо известное неравенство:
@@ -492,19 +492,19 @@
 и, следовательно, для всех $T > t_0$ и $\delta > 0$
 
 \beq{eq:3/3/8}
-	\prob\Biggl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Biggr) \leqslant \frac{1}{\delta} \funcV(\m{x}_{t_0}, t_0) \mbox{.}
+	\prob\Biggl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Biggr) \leqslant \frac{1}{\delta} \funcV(\m{x}_{t_0}, t_0) \text{.}
 \eeq
 
 Из последнего неравенства, непрерывности $\funcV(\m{x}, t)$ и того, что $\funcV(\m{0}, t) = 0$, получаем:
 
 \beq{eq:3/3/9}
-	\lim\limits_{\m{x}_0 \to \m{0}} \prob\Biggl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Biggr) = 0 \mbox{.}
+	\lim\limits_{\m{x}_0 \to \m{0}} \prob\Biggl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Biggr) = 0 \text{.}
 \eeq
 
 Далее, если предположить, что при некоторых постоянных $p$, $k_1$ и $k_2$
 
 \beq{eq:3/3/10}
-	k_1 |\m{x}|^p \leqslant \funcV(\m{x}, t) \leqslant k_2 |\m{x}|^p \mbox{,}
+	k_1 |\m{x}|^p \leqslant \funcV(\m{x}, t) \leqslant k_2 |\m{x}|^p \text{,}
 \eeq
 
 то согласно~\ref{eq:3/3/9} получим, что невозмущенное движение системы $\m{x}_t~\equiv~\m{0}$ стохастически устойчиво.
@@ -517,7 +517,7 @@
 	Пусть в области $\{ t > 0 \} \times \setU$, включающей множество $\{ \m{x} \equiv \m{0} \}$, существует непрерывная, положительно определенная функция $\funcV(\m{x}, t) \in \setC_2^0(\setU)$ и пусть при $t > 0$
 	
 		\beqn
-			\limsup\limits_{\m{x} \to \m{0}} \funcV(\m{x}, t) = 0 \mbox{,}
+			\limsup\limits_{\m{x} \to \m{0}} \funcV(\m{x}, t) = 0 \text{,}
 		\eeqn
 		
 		а $L\bigl\{ \funcV(\m{x}, t) \bigr\} < 0$ в этой области. Тогда невозмущенное движение $\m{x}_t \equiv \m{0}$ асимптотически стохастически устойчиво.
@@ -528,9 +528,9 @@
 	
 	\beqn
 		\eqsystem{
-			\limsup\limits_{\m{x} \to \m{0}} \funcV(\m{x}, t) = 0 \mbox{,} \\
-			\liminf\limits_{\m{x} \to \m{\infty}} \funcV(\m{x}, t) = \infty \mbox{,} \\
-			L\bigl\{ \funcV(\m{x}, t) \bigr\} < 0 \mbox{.}
+			\limsup\limits_{\m{x} \to \m{0}} \funcV(\m{x}, t) = 0 \text{,} \\
+			\liminf\limits_{\m{x} \to \m{\infty}} \funcV(\m{x}, t) = \infty \text{,} \\
+			L\bigl\{ \funcV(\m{x}, t) \bigr\} < 0 \text{.}
 		}
 	\eeqn
 	
@@ -542,8 +542,8 @@
 	
 	\beqn
 		\eqsystem{
-			k_1 |\m{x}|^p \leqslant \funcV(\m{x}, t) \leqslant k_2 |\m{x}|^p \mbox{,} \\
-			L\bigl\{ \funcV(\m{x}, t) \bigr\} < -k_3 |\m{x}|^p \mbox{.}
+			k_1 |\m{x}|^p \leqslant \funcV(\m{x}, t) \leqslant k_2 |\m{x}|^p \text{,} \\
+			L\bigl\{ \funcV(\m{x}, t) \bigr\} < -k_3 |\m{x}|^p \text{.}
 		}
 	\eeqn
 \eteo
