@@ -10,13 +10,13 @@
 \newcommand{\mSig}{     \sff{\Sigma}                     } % матрица ковариаций
 
 \newcommand{\setTime}{  [0, T]                           } % временной промежуток, который достало вводить
-\newcommand{\setX}{     \calf{X}                         } % множество X
-\newcommand{\setT}{     \calf{T}                         } % множество T
-\newcommand{\setF}{     \calf{F}                         } % множество F
-\newcommand{\setM}{     \calf{M}_2\bigl( \setTime \bigr) } % множество M2
-\newcommand{\setK}{     \calf{K}_2\bigl( \setTime \bigr) } % множество K2
-\newcommand{\setU}{     \calf{U}                         } % множество U
-\newcommand{\setC}{     \calf{C}                         } % множество U
+\newcommand{\setX}{     \cale{X}                         } % множество X
+\newcommand{\setT}{     \cale{T}                         } % множество T
+\newcommand{\setF}{     \cale{F}                         } % множество F
+\newcommand{\setM}{     \cale{M}_2\bigl( \setTime \bigr) } % множество M2
+\newcommand{\setK}{     \cale{K}_2\bigl( \setTime \bigr) } % множество K2
+\newcommand{\setU}{     \cale{U}                         } % множество U
+\newcommand{\setC}{     \cale{C}                         } % множество U
 
 \newcommand{\argEmpty}{ \{\emptyarg\}                    } % пустой аргумент
 
@@ -89,7 +89,7 @@
 	Случайный процесс $\xi_t$, определеный для всех $t \in \setTime$, называется процессом с независимыми приращениями, если для любых $t_0, t_1, \ldots, t_k \in \setTime$ ($0 \leqslant t_0 < t_1 < \ldots < t_k \leqslant T$), случайные величины $\xi_{t_0}, \xi_{t_1}-\xi_{t_0}, \ldots, \xi_{t_k}-\xi_{t_{k-1}}$ стохастически независимы между собой.
 \end{df}
 
-Особую роль в дальнейшем изложении будут играть так называемые винеровские случайные процессы, относящиеся к классу гауссовских процессов с независимыми приращениями\footnote{ Подробное изложение теории случайных процессов с независимыми приращениями можно найти в монографии А.\,В.\,Скорохода\cite{SKOROHOD} }.
+Особую роль в дальнейшем изложении будут играть так называемые винеровские случайные процессы, относящиеся к классу гауссовских процессов с независимыми приращениями\footnote{ Подробное изложение теории случайных процессов с независимыми приращениями можно найти в монографии А.\,В.\,Скорохода\cite{SKOROHOD}.}.
 
 \begin{df}\lbl{df:6}
 	Случайный процесс $\xi_t \in \Rv{1}$, определеный для всех $t \in \setTime$, называется винеровским, если он является процессом с независимыми приращениями и удовлетворяет следующим условиям
@@ -267,7 +267,7 @@
 
 где $Q$, $F$~--- известные функции, а $\tau$, например, постоянный момент времени.
 
-Известны различные типы управляющих воздействий, которые могут использовать или не использовать информацию о векторе состояния системы в предшествующие моменты времени (некоторые из них были рассмотрены в предыдущем разделе). Рассмотрим управление $\m{u}(\m{x}_t, t)$ марковского типа. Тогда для него минимальная по $u$ величина функционала $\funcF$, которую обозначим через $\funcH(\m{x}, s)$, удовлетворяет уравнению Гамильтона-Якоби-Беллмана вида
+Известны различные типы управляющих воздействий, которые могут использовать или не использовать информацию о векторе состояния системы в предшествующие моменты времени (некоторые из них были рассмотрены в предыдущем разделе). Рассмотрим управление $\m{u}(\m{x}_t, t)$ марковского типа. Тогда для него минимальная по $u$ величина функционала $\funcF$, которую обозначим через $\funcH(\m{x}, s)$, удовлетворяет уравнению Гамильтона--Якоби--Беллмана вида
 
 \beqarr
 	\lbl{eq:3/2/3}
@@ -281,7 +281,7 @@
 \beq{eq:3/2/5}
 \begin{split}
 	L_u\argEmpty = \partdiff{\argEmpty}{s} &+ \sum\limits_{i=1}^n\m{a}\idxB{i}(\m{x}, \m{u}, s)\partdiff{\argEmpty}{\m{x}\idxB{i}} + \\
-	&+ \frac{1}{2} \sum\limits_{i=1}^n \sum\limits_{j=1}^n \m{D}\idxB{ij}(\m{x}, \m{u}, s)\partdiffsecond{\argEmpty}{\m{x}\idxB{i}}{\m{x}\idxB{j}} \text{,}
+	&+ \frac{1}{2} \overset{n}{\sum\limits_{i=1} \sum\limits_{j=1}} \m{D}\idxB{ij}(\m{x}, \m{u}, s)\partdiffsecond{\argEmpty}{\m{x}\idxB{i}}{\m{x}\idxB{j}} \text{,}
 \end{split}
 \eeq
 
@@ -459,8 +459,8 @@
 
 \beq{eq:3/3/3}
 \begin{split}
-	L\argEmpty = \partdiff{\argEmpty}{t} &+ \sum\limits_{i=1}^n \m{a}\idxB{i}(\m{x}, t)\partdiff{\argEmpty}{\m{x}\idxB{i}} + \\
-	&+ \frac{1}{2}\sum_{j=1}^m\underset{l, i = 1}{\overset{n}{\sum\sum}} \m{\Sigma}\idxB{lj}(\m{x}, t) \m{\Sigma}\idxB{ij}(\m{x}, t) \partdiffsecond{\argEmpty}{\m{x}\idxB{l}}{\m{x}\idxB{i}}
+	L\argEmpty = \partdiff{\argEmpty}{t} &+ \sum\limits_{i=1}^n \m{a}\idxB{i}(\m{x}, t) \partdiff{\argEmpty}{\m{x}\idxB{i}} + \\
+	&+ \frac{1}{2}\sum_{j=1}^m \overset{n}{\sum\limits_{l=1}\sum\limits_{l=1}} \m{\Sigma}\idxB{lj}(\m{x}, t) \m{\Sigma}\idxB{ij}(\m{x}, t) \partdiffsecond{\argEmpty}{\m{x}\idxB{l}}{\m{x}\idxB{i}}
 \end{split}
 \eeq
 
