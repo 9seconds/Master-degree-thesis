@@ -11,16 +11,19 @@
 \usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage[mathscr]{eucal}
-\usepackage{theorem}
+\usepackage{ntheorem}
 \usepackage[russian]{varioref}
 \usepackage[pdftex]{graphicx}
 \usepackage{listings}
 \usepackage[font=it,labelsep=period,format=hang]{caption}
 
 
+
 \frenchspacing
 \fussy
 \raggedbottom
+
+
 
 \setlength{\leftmargin}{20mm}
 \setlength{\rightmargin}{10mm}
@@ -28,11 +31,14 @@
 \emergencystretch=6pt
 
 
+
+\theoremseparator{.}
 \newtheorem{teo}{Теорема}
 \newtheorem{statement}{Утверждение}
 \newtheorem{lemma}{Лемма}
 \newtheorem{alg}{Алгоритм}
 \newtheorem{df}{Определение}
+
 
 
 \DeclareMathOperator{\diag}{\mathrm{diag}}
@@ -78,6 +84,9 @@
 % эпсилон
 \newcommand{\eps}{ \varepsilon }
 
+% доказательство
+\newcommand{\proof}{ \strong{Доказательство.} }
+
 % сделать текст полужирным
 \newcommand{\strong}[1]{{ \fontseries{bx}\selectfont {#1}} }
 
@@ -97,7 +106,7 @@
 \newcommand{\partdiffsecond}[3]{ \frac{\partial^2 {#1}}{\partial {#2}\,\partial {#3}} }
 
 % квадратик qed
-\newcommand{\qed}{ \vspace{12pt}\hfill \text{\raggedright \rule{.1in}{.1in}} }
+\newcommand{\qed}{ \vspace{12pt} \hfill \text{\raggedright \rule{.1in}{.1in}} }
 
 % каллиграфическое начертание
 \newcommand{\calf}[1]{ \mathcal{#1} }
