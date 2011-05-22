@@ -1,0 +1,94 @@
+% coding: utf-8
+% --------------------------------------------------------------------------------------------------
+% "Синтез оптимального стохастического управления", 2011 год
+% --------------------------------------------------------------------------------------------------
+
+
+
+\documentclass[ignorenonframetext,hyperref={pdftex,unicode},compress]{beamer}
+\mode<presentation>{}
+
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+\usepackage[mathscr]{eucal}
+\usepackage[russian]{varioref}
+\usepackage{listings}
+\usepackage[font=it,labelsep=period,format=hang]{caption}
+
+
+
+% for screen only
+\usetheme{Singapore}
+
+% for handout only
+%\usetheme{Pittsburgh}
+%\usecolortheme{dove}
+
+
+\newcommand{\br}{\vspace{12pt}}
+\newtheorem{teo}{Теорема}
+\newtheorem{alg}{Алгоритм}
+
+
+
+%-------------------------------------------------------------------------------
+
+
+
+\title{О проблемах синтеза оптимального регулятора с обратной связью в многомерных стохастических системах}
+\author{Архипов С.\,В.}
+\institute{Научный руководитель: Пакшин П.\,В.}
+\date{15 июня 2011 г.}
+
+
+
+\begin{document}
+
+
+% начало рисунка
+\newcommand{\bfig}{ \begin{figure}\center }
+
+% конец рисунка
+\newcommand{\efig}{ \end{figure} }
+
+% вставка рисунка
+\newcommand{\addfigure}[3]{ \bfig \input{fig_#2} \caption{#3} \lbl{#1} \efig }
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 0: титульная страница
+%-------------------------------------------------------------------------------
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 1: постановка основной задачи
+%-------------------------------------------------------------------------------
+\begin{frame}
+    \frametitle{Гибридные диффузионные системы}
+    \framesubtitle{Описание проблематики}
+
+    \begin{description}
+        \item[Составные системы]~--- системы, чей механизм работы качественно и существенно зависит от некоторого множества параметров.
+    \end{description}
+    \begin{itemize}
+        \item Сложность в описании составных систем;
+        \item Сложность при решении таких систем;
+        \item Сложность учета новых условий
+    \end{itemize}
+    \par Необходимо введение нового подхода к описанию составных систем.
+\end{frame}
+
+
+\end{document}
+
