@@ -145,7 +145,7 @@
 %-------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Синтез оптимального управления}
-	\framesubtitle{Уравнение Беллмана при $T \to \infty$}\small
+	\framesubtitle{Уравнение Беллмана при $T \to \infty$}
 
     Пусть критерий качества задан в виде
     
@@ -173,18 +173,53 @@
 %-------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Оптимальное стохастическое управление}
-	\framesubtitle{Постановка задачи}\small
+	\framesubtitle{Постановка задачи}
     
     Пусть система задана в виде процесса Ито~\ref{eq:11}
 
     \begin{equation}\label{eq:11}
-    	d\mathbf{x}_t = \mathbf{a}(\mathbf{x}_t, \mathbf{u}, t)dt + \mathbf{C}(\mathbf{x}_t, \mathbf{u}, t)d\mathbf{f}_t \text{.}
+    	d\mathbf{x}_t = \bigl( \mathbf{A}(t)\mathbf{x}_t + \mathbf{B}(t)\mathbf{u}(\mathbf{x}_t, t) \bigr)dt + \mathbf{C}(t)d\mathbf{w}_t \text{.}
     \end{equation}
     
     Тогда оптимальное управление $\mathbf{u}^*(t)$ синтезируется из условия минимума функционала качества:
     
     \begin{equation}\label{eq:12}
     	\mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ Q(\mathbf{x}_\tau, \tau) + \int\limits_s^\tau F(\mathbf{x}_t, \mathbf{u}, t)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
+    \end{equation}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 6: Оптимальное стохастическое управление - квадратичный критерий
+%---            качества
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Оптимальное стохастическое управление}
+	\framesubtitle{Синтез оптимального управления}\small
+    
+    Пусть критерий качества является квадратичным
+
+    \begin{equation}\label{eq:13}
+    	\mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ \mathbf{x}_T\mathbf{R}\mathbf{x}_T^T + \int\limits_s^T \bigr( \mathbf{x}_t^T\mathbf{C}(t)\mathbf{x}_t + \mathbf{u}^T\mathbf{P}(t)\mathbf{u} \bigl)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
+    \end{equation}
+    
+    Тогда оптимальное управление можно получить $\mathbf{u}^*(t)$ следующим образом:
+    
+    \begin{equation}\label{eq:14}
+    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T(t)\mathbf{P}(t)\mathbf{x}(t) \text{,}
+    \end{equation}
+
+    где матрица $\mathbf{P}(t)$ находится из системы~\ref{eq:15}
+
+    \begin{equation}\label{eq:15}
+    	\begin{cases}
+    		\begin{split}
+    			-\frac{d\mathbf{P}(t)}{dt} =&~\mathbf{A}^T(t)\mathbf{P}(t) - \mathbf{P}(t)\mathbf{A}(t) +\\
+                &+ \mathbf{P}(t)\mathbf{B}(t)\mathbf{R}^{-1}(t)\mathbf{B}(t)\mathbf{P}(t) - \mathbf{C}(t) \text{;}
+			\end{split} \\
+			\mathbf{P}(T) = \mathbf{R} \text{.}
+		\end{cases}    
     \end{equation}
 \end{frame}
 
