@@ -254,29 +254,48 @@
 
 
 %-------------------------------------------------------------------------------
-%---   слайд 8: Решение типовой задачи - алгоритм 1, описание
+%---   слайд 8: Решение типовой задачи - постановка задачи
 %-------------------------------------------------------------------------------
 \begin{frame}
 	\frametitle{Решение типовой задачи}
-	\framesubtitle{Описание алгоритма 1}
+	\framesubtitle{Программное обеспечение для проведения экспериментов}
     
-    \begin{equation}\label{eq:16}
-        \begin{cases}
-            \dot{x}_1 = x_2 \text{,} \\
-            \dot{x}_2 = \frac{k_1}{k_2 - t} x_3 + \xi(t) \text{,} \\
-            \dot{x}_3 = u \text{.}
-        \end{cases}
-    \end{equation}
+    \begin{enumerate}
+        \item
+            Программа написана на языке программирования \texttt{Java};
 
-    \begin{description}
-        \item[$x_1$] ---~~боковое отклонение от номинальной траектории;
-        \item[$x_2$] ---~~скорость этого отклонения;
-        \item[$x_3$] ---~~угол направления вектора тяги.
-    \end{description}
+        \item
+            Использовались \texttt{gnuplot}, \texttt{sed}, \texttt{awk}, \texttt{bash}, \texttt{git};
 
-    \begin{equation}\label{eq:17}
-        \mathcal{F}(\mathbf{x}, \mathbf{u}, T) = \frac{1}{2} \int\limits_0^T \bigl( \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + ru^2(\tau) \bigr)\,d\tau \text{.}
-    \end{equation}
+        \item
+            Программное обеспечение разрабатывалось для ОС GNU\textbackslash Linux;
+
+        \item
+            Реализация 4 алгоритмов решения задачи управления ракетой с возможностью тонкой настройки;
+
+        \item
+            Программный код свободно распространяется через GitHub: \texttt{http://github.com/9seconds/rocketsim}.
+    \end{enumerate}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 9: Решение типовой задачи - алгоритм 1, описание
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Решение типовой задачи}
+	\framesubtitle{Описание алгоритма~\ref{alg:1}}
+    
+    \begin{alg}\label{alg:1}~
+        \begin{enumerate}
+            \item
+                Для заданных $T$, $r$, $\mathbf{Q}(t)$ требуется решить матричное дифференциальное уравнение~\ref{eq:15} в обратном времени с граничным условием $\mathbf{P}(T) = \mathbf{0}$. Таким образом, получим траекторию $\mathbf{P}(t)$, где $0 \leqslant t \leqslant T$;
+
+            \item
+                Пользуясь формулой~\ref{eq:14} получаем оптимальное управление $\mathbf{u}^*(t)$ на интервале $0 \leqslant t \leqslant T$ в каждый момент времени $t$.
+        \end{enumerate}
+    \end{alg}
 \end{frame}
 
 
