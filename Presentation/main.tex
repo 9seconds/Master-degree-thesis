@@ -70,7 +70,7 @@
     Пусть физический объект описывается системой~\ref{eq:1}
 
 	\begin{equation}\label{eq:1}
-	    \dot{\mathbf{x}}(t) = \mathbf{A}(t)\mathbf{x}(t) + \mathbf{B}(t)\mathbf{u}(t) + \mathbf{C}(t)\mathbf{\xi}(t) \text{,}
+	    \dot{\mathbf{x}}(t) = \mathbf{A}(t)\mathbf{x}(t) + \mathbf{B}(t)\mathbf{u}(t) \text{.}
 	\end{equation}
 
 	Требуется найти такое оптимальное управление $\mathbf{u}^*(t)$, при котором значение критерия качества было бы минимальным:
@@ -163,6 +163,28 @@
     
     \begin{equation}\label{eq:10}
     	-\mathbf{P}\mathbf{B}\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P} + \mathbf{P}\mathbf{A} + \mathbf{A}^T\mathbf{P} + \mathbf{Q} = 0 \text{.}    
+    \end{equation}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 5: Оптимальное стохастическое управление - постановка задачи
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Оптимальное стохастическое управление}
+	\framesubtitle{Постановка задачи}\small
+    
+    Пусть система задана в виде процесса Ито~\ref{eq:11}
+
+    \begin{equation}\label{eq:11}
+    	d\mathbf{x}_t = \mathbf{a}(\mathbf{x}_t, \mathbf{u}, t)dt + \mathbf{C}(\mathbf{x}_t, \mathbf{u}, t)d\mathbf{f}_t \text{.}
+    \end{equation}
+    
+    Тогда оптимальное управление $\mathbf{u}^*(t)$ синтезируется из условия минимума функционала качества:
+    
+    \begin{equation}\label{eq:12}
+    	\mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ Q(\mathbf{x}_\tau, \tau) + \int\limits_s^\tau F(\mathbf{x}_t, \mathbf{u}, t)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
     \end{equation}
 \end{frame}
 
