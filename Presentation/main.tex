@@ -126,7 +126,7 @@
     
     где матрица $\mathbf{P}(t)$ может быть найдена из уравнения Риккати
     
-    \begin{equation}\label{eq:6}
+    \begin{equation}\label{eq:7}
     	\begin{cases}
     		\begin{split}
     			- \frac{d \mathbf{P}(t)}{dt} =& -\mathbf{P}(t)\mathbf{B}(t)\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t) + \mathbf{P}(t)\mathbf{A}(t) + \\
@@ -135,7 +135,35 @@
 			\mathbf{P}(t_2) = \mathbf{M} \text{.}
 		\end{cases}    
     \end{equation}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 4: Синтез оптимального управления -- уравнение Беллмана, стационар-
+%---            ный случай
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Синтез оптимального управления}
+	\framesubtitle{Уравнение Беллмана при $T \to \infty$}\small
+
+    Пусть критерий качества задан в виде
     
+    \begin{equation}\label{eq:8}
+    	\mathcal{F} = \frac{1}{2} \int\limits_0^\infty \bigl[ \mathbf{x}^T(\tau)\mathbf{Q} \mathbf{x}(\tau) + \mathbf{u}^T(t)\mathbf{R} \mathbf{u}(\tau) \bigr]\,d\tau \text{.}
+    \end{equation}
+    
+    Тогда оптимальное управление $\mathbf{u}^*(t)$ может быть синтезировано следующим образом:
+    
+    \begin{equation}\label{eq:9}
+    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P}\mathbf{x}(t) \text{,}
+    \end{equation}
+    
+    где матрица $\mathbf{P}$ может быть найдена из нелинейного алгебраического матричного уравнения Риккати
+    
+    \begin{equation}\label{eq:10}
+    	-\mathbf{P}\mathbf{B}\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P} + \mathbf{P}\mathbf{A} + \mathbf{A}^T\mathbf{P} + \mathbf{Q} = 0 \text{.}    
+    \end{equation}
 \end{frame}
 
 
