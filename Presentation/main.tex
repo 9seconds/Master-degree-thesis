@@ -51,16 +51,6 @@
 \begin{document}
 
 
-% начало рисунка
-\newcommand{\bfig}{ \begin{figure}\center }
-
-% конец рисунка
-\newcommand{\efig}{ \end{figure} }
-
-% вставка рисунка
-\newcommand{\addfigure}[3]{ \bfig \input{fig_#2} \caption{#3} \lbl{#1} \efig }
-
-
 
 %-------------------------------------------------------------------------------
 %---   слайд 0: титульная страница
@@ -75,18 +65,77 @@
 %---   слайд 1: постановка основной задачи
 %-------------------------------------------------------------------------------
 \begin{frame}
-    \frametitle{Гибридные диффузионные системы}
-    \framesubtitle{Описание проблематики}
+	\frametitle{Постановка задачи}
 
-    \begin{description}
-        \item[Составные системы]~--- системы, чей механизм работы качественно и существенно зависит от некоторого множества параметров.
-    \end{description}
-    \begin{itemize}
-        \item Сложность в описании составных систем;
-        \item Сложность при решении таких систем;
-        \item Сложность учета новых условий
-    \end{itemize}
-    \par Необходимо введение нового подхода к описанию составных систем.
+    Пусть физический объект описывается системой~\ref{eq:1}
+
+	\begin{equation}\label{eq:1}
+	    \dot{\mathbf{x}}(t) = \mathbf{A}(t)\mathbf{x}(t) + \mathbf{B}(t)\mathbf{u}(t) + \mathbf{C}(t)\mathbf{\xi}(t) \text{,}
+	\end{equation}
+
+	Требуется найти такое оптимальное управление $\mathbf{u}^*(t)$, при котором значение критерия качества было бы минимальным:
+	
+	\begin{equation}\label{eq:2}
+	    \mathcal{F} \bigl(  \mathbf{x}(t), \mathbf{u}^*(t)  \bigr) = \min_{\mathbf{u}(t) \in \Upsilon} \mathcal{F} \bigl(  \mathbf{x}(t), \mathbf{u}(t)  \bigr)  \text{.}
+	\end{equation}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 2: Синтез оптимального управления -- уравнение Беллмана
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Синтез оптимального управления}
+	\framesubtitle{Уравнение Беллмана}
+
+    Пусть критерий качества задан в виде
+    
+    \begin{equation}\label{eq:3}
+    	\mathcal{F} = \int\limits_{t_1}^{t_2} \mathsf{L}(\mathbf{x}, \mathbf{u}, t)\,dt \text{.}
+    \end{equation}
+    
+    Тогда необходимое условие оптимальности запишется как
+    
+    \begin{equation}\label{eq:4}
+    	\underset{\mathbf{u}(t) \in \Upsilon}{\min} \biggl\{ \biggl[ \frac{d \mathcal{F}^*}{d t} \biggr]_{\mathbf{u}, t} + \mathsf{L}\bigl(  \mathbf{x}(\mathbf{u}, t), \mathbf{u}, t  \bigr) \biggr\} = 0 \text{.}
+    \end{equation}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 3: Синтез оптимального управления -- уравнение Беллмана, квадратич-
+%---            ный критерий качества
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Синтез оптимального управления}
+	\framesubtitle{Уравнение Беллмана с квадратичным критерием качества}\small
+
+    Пусть критерий качества задан в виде
+    
+    \begin{equation}\label{eq:5}
+    	\mathcal{F} = \frac{1}{2} \mathbf{x}_2^T \mathbf{M} \mathbf{x}_2 + \frac{1}{2} \int\limits_{t_1}^{t_2} \bigl[ \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + \mathbf{u}^T(\tau)\mathbf{R}(\tau)\mathbf{u}(\tau) \bigr]\,d\tau \text{.}
+    \end{equation}
+    
+    Тогда оптимальное управление $\mathbf{u}^*(t)$ может быть синтезировано следующим образом:
+    
+    \begin{equation}\label{eq:6}
+    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t)\mathbf{x}(t) \text{,}
+    \end{equation}
+    
+    где матрица $\mathbf{P}(t)$ может быть найдена из уравнения Риккати
+    
+    \begin{equation}\label{eq:6}
+    	\begin{cases}
+    		\begin{split}
+    			- \frac{d \mathbf{P}(t)}{dt} =& -\mathbf{P}(t)\mathbf{B}(t)\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t) + \mathbf{P}(t)\mathbf{A}(t) + \\
+    			&+ \mathbf{A}^T(t)\mathbf{P}(t) + \mathbf{Q}(t) \text{;}
+			\end{split} \\
+			\mathbf{P}(t_2) = \mathbf{M} \text{.}
+		\end{cases}    
+    \end{equation}
+    
 \end{frame}
 
 
