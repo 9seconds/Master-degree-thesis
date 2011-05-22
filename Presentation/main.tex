@@ -224,5 +224,61 @@
 \end{frame}
 
 
+
+%-------------------------------------------------------------------------------
+%---   слайд 7: Решение типовой задачи - постановка задачи
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Решение типовой задачи}
+	\framesubtitle{Постановка задачи}
+    
+    \begin{equation}\label{eq:16}
+        \begin{cases}
+            \dot{x}_1 = x_2 \text{,} \\
+            \dot{x}_2 = \frac{k_1}{k_2 - t} x_3 + \xi(t) \text{,} \\
+            \dot{x}_3 = u \text{.}
+        \end{cases}
+    \end{equation}
+
+    \begin{description}
+        \item[$x_1$] ---~~боковое отклонение от номинальной траектории;
+        \item[$x_2$] ---~~скорость этого отклонения;
+        \item[$x_3$] ---~~угол направления вектора тяги.
+    \end{description}
+
+    \begin{equation}\label{eq:17}
+        \mathcal{F}(\mathbf{x}, \mathbf{u}, T) = \frac{1}{2} \int\limits_0^T \bigl( \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + ru^2(\tau) \bigr)\,d\tau \text{.}
+    \end{equation}
+\end{frame}
+
+
+
+%-------------------------------------------------------------------------------
+%---   слайд 8: Решение типовой задачи - алгоритм 1, описание
+%-------------------------------------------------------------------------------
+\begin{frame}
+	\frametitle{Решение типовой задачи}
+	\framesubtitle{Описание алгоритма 1}
+    
+    \begin{equation}\label{eq:16}
+        \begin{cases}
+            \dot{x}_1 = x_2 \text{,} \\
+            \dot{x}_2 = \frac{k_1}{k_2 - t} x_3 + \xi(t) \text{,} \\
+            \dot{x}_3 = u \text{.}
+        \end{cases}
+    \end{equation}
+
+    \begin{description}
+        \item[$x_1$] ---~~боковое отклонение от номинальной траектории;
+        \item[$x_2$] ---~~скорость этого отклонения;
+        \item[$x_3$] ---~~угол направления вектора тяги.
+    \end{description}
+
+    \begin{equation}\label{eq:17}
+        \mathcal{F}(\mathbf{x}, \mathbf{u}, T) = \frac{1}{2} \int\limits_0^T \bigl( \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + ru^2(\tau) \bigr)\,d\tau \text{.}
+    \end{equation}
+\end{frame}
+
+
 \end{document}
 
