@@ -67,7 +67,7 @@
 \begin{frame}
 	\frametitle{Постановка задачи}
 
-    Пусть физический объект описывается системой~\ref{eq:1}
+    Пусть физический объект описывается системой
 
 	\begin{equation}\label{eq:1}
 	    \dot{\mathbf{x}}(t) = \mathbf{A}(t)\mathbf{x}(t) + \mathbf{B}(t)\mathbf{u}(t) \text{.}
@@ -162,7 +162,7 @@
     где матрица $\mathbf{P}$ может быть найдена из нелинейного алгебраического матричного уравнения Риккати
     
     \begin{equation}\label{eq:10}
-    	-\mathbf{P}\mathbf{B}\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P} + \mathbf{P}\mathbf{A} + \mathbf{A}^T\mathbf{P} + \mathbf{Q} = 0 \text{.}    
+    	-\mathbf{P}\mathbf{B}\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P} + \mathbf{P}\mathbf{A} + \mathbf{A}^T\mathbf{P} + \mathbf{Q} = \mathbf{0} \text{.}    
     \end{equation}
 \end{frame}
 
@@ -175,7 +175,7 @@
 	\frametitle{Оптимальное стохастическое управление}
 	\framesubtitle{Постановка задачи}
     
-    Пусть система задана в виде процесса Ито~\ref{eq:11}
+    Пусть система задана в виде процесса Ито:
 
     \begin{equation}\label{eq:11}
     	d\mathbf{x}_t = \bigl( \mathbf{A}(t)\mathbf{x}_t + \mathbf{B}(t)\mathbf{u}(\mathbf{x}_t, t) \bigr)dt + \mathbf{C}(t)d\mathbf{w}_t \text{.}
@@ -207,18 +207,18 @@
     Тогда оптимальное управление можно получить $\mathbf{u}^*(t)$ следующим образом:
     
     \begin{equation}\label{eq:14}
-    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T(t)\mathbf{P}(t)\mathbf{x}(t) \text{,}
+    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T(t)\mathbf{S}(t)\mathbf{x}(t) \text{,}
     \end{equation}
 
-    где матрица $\mathbf{P}(t)$ находится из системы~\ref{eq:15}
+    где матрица $\mathbf{S}(t)$ находится из системы~\ref{eq:15}
 
     \begin{equation}\label{eq:15}
     	\begin{cases}
     		\begin{split}
-    			-\frac{d\mathbf{P}(t)}{dt} =&~\mathbf{A}^T(t)\mathbf{P}(t) - \mathbf{P}(t)\mathbf{A}(t) +\\
-                &+ \mathbf{P}(t)\mathbf{B}(t)\mathbf{R}^{-1}(t)\mathbf{B}(t)\mathbf{P}(t) - \mathbf{C}(t) \text{;}
+    			-\frac{d\mathbf{S}(t)}{dt} =&~\mathbf{A}^T(t)\mathbf{S}(t) - \mathbf{S}(t)\mathbf{A}(t) +\\
+                &+ \mathbf{S}(t)\mathbf{B}(t)\mathbf{P}^{-1}(t)\mathbf{B}(t)\mathbf{S}(t) - \mathbf{C}(t) \text{;}
 			\end{split} \\
-			\mathbf{P}(T) = \mathbf{R} \text{.}
+			\mathbf{S}(T) = \mathbf{R} \text{.}
 		\end{cases}    
     \end{equation}
 \end{frame}
@@ -301,7 +301,7 @@
             Реализация 4 алгоритмов решения задачи управления ракетой с возможностью тонкой настройки;
 
         \item
-            Программный код свободно распространяется через GitHub: \texttt{http://github.com/9seconds/rocketsim}.
+            Программный код свободно распространяется через GitHub: \texttt{https://github.com/9seconds/rocketsim}.
     \end{enumerate}
 \end{frame}
 
@@ -382,7 +382,7 @@
     \begin{alg}\label{alg:2}~
         \begin{enumerate}
             \item
-                Для заданных $T$, $r$, $\mathbf{Q}(t)$ требуется решить матричное алгербаическое уравнение~\ref{eq:10} Таким образом, получим матрицу усилений $\mathbf{P}$ для всех $t$ из $0 \leqslant t \leqslant T$;
+                Для заданных $T$, $r$, $\mathbf{Q}(t)$ требуется решить матричное алгербаическое уравнение~\ref{eq:10}. Таким образом, получим матрицу усилений $\mathbf{P}$ для всех $t$ из $0 \leqslant t \leqslant T$;
 
             \item
                 Пользуясь формулой~\ref{eq:9} получаем оптимальное управление $\mathbf{u}^*(t)$ на интервале $0 \leqslant t \leqslant T$ в каждый момент времени $t$.
