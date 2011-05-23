@@ -2,11 +2,27 @@
 % --------------------------------------------------------------------------------------------------
 % "Синтез оптимального стохастического управления", 2011 год
 % --------------------------------------------------------------------------------------------------
-\documentclass[12pt, a4paper, titlepage, openbib, oneside]{report}
+
+
+
+\documentclass[12pt,a4paper,titlepage,openbib,oneside,pdftex]{report}
 \usepackage{cmap}
-\usepackage{mathtext}
+
+\usepackage[T2A]{fontenc}
 \usepackage[utf8x]{inputenc}
 \usepackage[russian]{babel}
+\selectlanguage{russian}
+
+\PrerenderUnicode{О проблемах синтеза оптимального регулятора с обратной связью в многомерных стохастических системах}
+
+\usepackage[breaklinks,pdftex,unicode,bookmarks,pdfborder={0 0 0}]{hyperref}
+\hypersetup{
+    pdftitle={О проблемах синтеза оптимального регулятора с обратной связью в многомерных стохастических системах},
+    pdfauthor={Сергей Архипов},
+    pdfsubject={Магистерская диссертация},
+    pdfkeywords={Оптимальное управление} {Стохастические системы} {Полет ракеты}
+}
+
 %\usepackage{indentfirst}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -17,6 +33,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{listings}
 \usepackage[font=it,labelsep=period,format=hang]{caption}
+\usepackage{mathtext}
 
 
 
