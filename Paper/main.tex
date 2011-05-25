@@ -9,6 +9,7 @@
 \usepackage{cmap}
 
 \usepackage[T2A]{fontenc}
+\DeclareSymbolFont{T2Aletters}{T2A}{cmr}{m}{it}
 \usepackage[utf8x]{inputenc}
 \usepackage[russian]{babel}
 \selectlanguage{russian}
@@ -34,6 +35,32 @@
 \usepackage{listings}
 \usepackage[font=it,labelsep=period,format=hang]{caption}
 \usepackage{mathtext}
+
+
+
+\usepackage{microtype}
+\SetProtrusion
+{
+encoding = T2A,
+family = cmr
+}
+{
+« =  {1000,     },
+» =  {    , 1000},
+„ =  {1000,     },
+“ =  {    , 1000},
+( =  {1000,     },
+) =  {    , 1000},
+! =  {    , 1000},
+? =  {    , 1000},
+: =  {    , 1000},
+; =  {    , 1000},
+. =  {    , 1000},
+- =  {    ,  500},
+{,}= {    , 1000}
+}
+\DeclareMicrotypeSet{t2atext}{encoding=T2A}
+\UseMicrotypeSet{t2atext}
 
 
 

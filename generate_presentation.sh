@@ -10,7 +10,7 @@ PDFCOMPRESS=9
 PDFOBJCOMPRESS=3
 
 GENOPTS="\pdfminorversion${PDFVERSION}\pdfcompresslevel${PDFCOMPRESS}\pdfobjcompresslevel${PDFOBJCOMPRESS}\input"
-PDFTEX="`which pdflatex` ${GENOPTS}"
+PDFTEX="`which pdflatex` \"${GENOPTS}\""
 
 cd Presentation
 
