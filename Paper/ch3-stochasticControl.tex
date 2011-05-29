@@ -54,12 +54,12 @@
 Случайный процесс называется \emph{гауссовским}, если все его совместные плотности распределения являются гауссовскими:
 
 \beqn
-    \prob_\xi(x1, x2, \ldots, x_k, t_1, t_2, \ldots, t_k) = \frac{1}{\sqrt{(2\pi)^n \det(\mSig)}}\exp\biggl( -\frac{(x-m)^T\mSig^{-1}(x-m)}{2} \biggr) \text{,}
+    \prob_\xi(x_1, x_2, \ldots, x_k, t_1, t_2, \ldots, t_k) = \frac{1}{\sqrt{(2\pi)^n \det\mSig}}\exp\biggl( -\frac{(x-m)^T\mSig^{-1}(x-m)}{2} \biggr) \text{,}
 \eeqn
 
 где $x = (x_1, x_2, \ldots, x_k)^T$; $m = (m_1, m_2, \ldots, m_k)^T$; $m_i = \E x_i$; $\mSig = \mSig^T > 0$~--- матрица ковариаций.
 
-Случайный процесс $\xi_t$, заданный на $\setT$, называется \emph{стационарным в узком смысле}, если для любых $n \geqslant 1$ и любых моментов $t_1, t_2, \ldots, t_n, t$, таких, что $t_i + t \in \setT$ ($i = 1, 2, \ldots, n$), совместные функции распределения совокупности случайных величин $\xi_{t_1+t}, \xi_{t_2+t}, \ldots, \xi_{t_n+1}$ не зависят от $t$.
+Случайный процесс $\xi_t$, заданный на $\setT$, называется \emph{стационарным в узком смысле}, если для любых $n \geqslant 1$ и любых моментов $t_1, t_2, \ldots, t_n, t$, таких, что $t_i + t \in \setT$ ($i = 1, 2, \ldots, n$), совместные функции распределения совокупности случайных величин $\xi_{t_1+t}, \xi_{t_2+t}, \ldots, \xi_{t_n+t}$ не зависят от $t$.
 
 \begin{df}\lbl{df:2}
     Случайный процесс $\xi_t$, определенный при всех $t \in \setTime$, называется непрерывным в момент времени $t^{*} \in \setTime$ в вероятностном смысле, если для любой последовательности $\{t_k\}_{k=1}^\infty$, принадлежащей $[0, T]$ и сходящейся к $t^{*}$ при $k \to \infty$, справедливо предельное соотношение
@@ -233,17 +233,23 @@
 
 Процессы Ито тесно связаны со стохастическими дифференциальными уравнениями Ито. Действительно, пусть задано дифференциальное уравнение
 
-\beq{eq:3/1/5}
-    dx_t = a(x_t, t)dt + \sigma(x_t, t)df_t \text{; } x_0 = x(0, \omega) \text{,}
-\eeq
+\beqarr
+    \lbl{eq:3/1/5}
+        dx_t = a(x_t, t)dt + \sigma(x_t, t)df_t \text{;} \\
+    \lbl{eq:3/1/6}
+        x_0 = x(0, \omega) \text{,}
+\eeqarr
 
 где $x_t \in \Rv{1}$~--- случайный процесс, являющийся решением уравнения~\ref{eq:3/1/5}; $a(x, t)$ и $\sigma(x, t) \in Rv{1}$~--- измеримые при всех $(x, t) \in \Rv{1} \times \setTime$ функции. Тогда это уравнение может быть переписано в интегральном виде
 
-\beq{eq:3/1/6}
-    x_t = x_0 + \int\limits_0^t a(x_\tau, \tau)\,d\tau + \int\limits_0^t \sigma(x_\tau, \tau)\,df_\tau \text{; } x_0 = x(0, \omega) \text{.}
-\eeq
+\beqarr
+    \lbl{eq:3/1/7}
+        x_t = x_0 + \int\limits_0^t a(x_\tau, \tau)\,d\tau + \int\limits_0^t \sigma(x_\tau, \tau)\,df_\tau \text{;} \\
+    \lbl{eq:3/1/8}
+        x_0 = x(0, \omega) \text{.}
+\eeqarr
 
-Второй интеграл в правой части~\ref{eq:3/1/6} может пониматься в смысле Ито, Стратоновича или как $\theta$-интеграл\cite{KUZNETCOV}. Пусть интеграл $\int_0^t \sigma(x_\tau, \tau)\,df_\tau$ является стохастическим интегралом Ито, тогда уравнение~\ref{eq:3/1/5} и соответствующее ему уравнение~\ref{eq:3/1/6} называются стохастическими дифференциальными уравнениями Ито.
+Второй интеграл в правой части~\ref{eq:3/1/7} может пониматься в смысле Ито, Стратоновича или как $\theta$-интеграл\cite{KUZNETCOV}. Пусть интеграл $\int_0^t \sigma(x_\tau, \tau)\,df_\tau$ является стохастическим интегралом Ито, тогда уравнение~\ref{eq:3/1/5} и соответствующее ему уравнение~\ref{eq:3/1/7} называются стохастическими дифференциальными уравнениями Ито.
 
 
 
@@ -262,7 +268,7 @@
 где $\m{x}_t \in \Rv{n}$~--- случайный процесс, являющийся решением уравнения~\ref{eq:3/2/1}; $\m{a} \in \Rv{n}$, $\m{\Sigma} \in \Rv{n}$ представляют собой векторные функции сноса и диффузии соответственно; $\m{f}_t$~--- стандартный винеровский процесс, моделирующий белый шум; $\m{u} \in \Rv{k}$~--- управляющее воздействие, которое выбирается из условия минимизации функционала вида
 
 \beq{eq:3/2/2}
-    \funcF(\m{x}, \m{u}, s) = \E \Biggl\{ Q(\m{x}_\tau, \tau) + \int\limits_s^\tau F(\m{x}_t, \m{u}, t)\,dt~\Biggm|~ \m{x}_s = \m{x} \Biggr\} \text{,}
+    \funcF(\m{x}, \m{u}, s) = \E \biggl\{ Q(\m{x}_\tau, \tau) + \int\limits_s^\tau F(\m{x}_t, \m{u}, t)\,dt~\biggm|~ \m{x}_s = \m{x} \biggr\} \text{,}
 \eeq
 
 где $Q$, $F$~--- известные функции, а $\tau$, например, постоянный момент времени.
@@ -280,7 +286,7 @@
 
 \beq{eq:3/2/5}
 \begin{split}
-    L_u\argEmpty = \partdiff{\argEmpty}{s} &+ \sum\limits_{i=1}^n\m{a}\idxB{i}(\m{x}, \m{u}, s)\partdiff{\argEmpty}{\m{x}\idxB{i}} + \\
+    L_u\argEmpty = \partdiff{\argEmpty}{s} &+ \sum\limits_{i=1}^n\m{a}\idxB{i}(\m{x}, \m{u}, s)\partdiff{\argEmpty}{\m{x}\idxB{i}}~+ \\
     &+ \frac{1}{2} \overset{n}{\sum\limits_{i=1} \sum\limits_{j=1}} \m{D}\idxB{ij}(\m{x}, \m{u}, s)\partdiffsecond{\argEmpty}{\m{x}\idxB{i}}{\m{x}\idxB{j}} \text{,}
 \end{split}
 \eeq
@@ -294,7 +300,7 @@
 Рассмотрим линейно-квадратичную проблему стохастического управления, то есть проблему нахождения управления $\m{u}(\m{x}_t, t)$ марковского типа, которое доставляет минимум следующему функционалу:
 
 \beq{eq:3/2/6}
-    \funcF(\m{x}, \m{u}, s) = \E \Biggl\{ \m{x}_T\m{R}\m{x}_T^T + \int\limits_s^T \bigr( \m{x}_t^T\m{C}(t)\m{x}_t + \m{u}^T\m{P}(t)\m{u} \bigl)\,dt~\Biggm|~ \m{x}_s = \m{x} \Biggr\} \text{,}
+    \funcF(\m{x}, \m{u}, s) = \E \biggl\{ \m{x}_T\m{R}\m{x}_T^T + \int\limits_s^T \bigr( \m{x}_t^T\m{C}(t)\m{x}_t + \m{u}^T\m{P}(t)\m{u} \bigl)\,dt~\biggm|~ \m{x}_s = \m{x} \biggr\} \text{,}
 \eeq
 
 где $\m{C}(t), \m{R} \in \Rs{n}{n}$, $\m{P}(t) \in \Rs{k}{k}$, а $\m{x}_t \in \Rv{n}$~--- решение следующей системы стохастических дифференциальных уравнений.
@@ -309,7 +315,7 @@
 
 \beq{eq:3/2/8}
 \begin{split}
-    \partdiff{\funcH}{s} + \m{x}^T\m{C}(s)\m{x} &+ \sum\limits_{j=1}^n \bigl( \m{A}(s)\m{x} \bigr)\idxB{j}\partdiff{\funcH}{\m{x}\idxB{j}} + \frac{1}{2} \partdiffsecond{\funcH}{\m{x}\idxB{i}}{\m{x}\idxB{j}} + \\
+    \partdiff{\funcH}{s} + \m{x}^T\m{C}(s)\m{x} &+ \sum\limits_{j=1}^n \bigl( \m{A}(s)\m{x} \bigr)\idxB{j}\partdiff{\funcH}{\m{x}\idxB{j}} + \frac{1}{2} \partdiffsecond{\funcH}{\m{x}\idxB{i}}{\m{x}\idxB{j}}~+ \\
     &+ \min\limits_{\m{u} \in \Rv{k}} \Bigl\{ \m{u}^T\m{P}(t)\m{u} + \sum\limits_{j=1}^n \bigl( \m{B}(s)\m{u} \bigr)\idxB{j}\partdiff{\funcH}{\m{x}\idxB{j}} \Bigr\} = 0 \text{,}
 \end{split}
 \eeq
@@ -332,7 +338,10 @@
 где $\tr$~--- след\footnote{ Сумма диагональных элементов. } матрицы; $\m{S}(s) \in \Rs{n}{n}$~--- симметричная положительно определенная и непрерывно дифференцируемая матрица, которая удовлетворяет следующему матричному уравнению Риккати:
 
 \beq{eq:3/2/12}
-    \genericdiff{S(s)}{s} = -\m{A}(S)^T\m{S}(s) - \m{S}(s)\m{A}(s) + \m{S}(s)\m{B}(s)\m{P}^{-1}(s)\m{B}(s)\m{S}(s) - \m{C}(s)
+\begin{split}
+    \genericdiff{S(s)}{s} &= -\m{A}(S)^T\m{S}(s) - \m{S}(s)\m{A}(s)~+ \\
+    &+ \m{S}(s)\m{B}(s)\m{P}^{-1}(s)\m{B}(s)\m{S}(s) - \m{C}(s)
+\end{split}
 \eeq
 
 с начальным условием
@@ -388,7 +397,7 @@
     Невозмущенное движение системы $\m{x}_t = \m{0}$ будем называть устойчивым по вероятности или стохастически устойчивым при $t \geqslant t_0$, если для любых $\eps > 0$ и $t_0 \geqslant 0$
 
     \beqn
-        \lim\limits_{\m{x}_0 \to \m{0}} \prob \biggl( \sup\limits_{t \geqslant t_0} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| \geqslant \eps \biggr) = 0 \text{,}
+        \lim\limits_{\m{x}_0 \to \m{0}} \prob \Bigl( \sup\limits_{t \geqslant t_0} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| \geqslant \eps \Bigr) = 0 \text{,}
     \eeqn
 
     где $\m{x}^{\m{x}_0, t_0}_t$~--- такое решение уравнения~\ref{eq:3/2/1}, что $\m{x}_{t_0} = \m{x}_0$.
@@ -398,7 +407,7 @@
     Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется асимптотически устойчивым по вероятности или асимптотически стохастически устойчивым, если оно стохастически устойчиво и, кроме того,
 
     \beqn
-        \lim\limits_{\m{x}_0 \to \m{0}} \prob \biggl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \biggr) = 1 \text{.}
+        \lim\limits_{\m{x}_0 \to \m{0}} \prob \Bigl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \Bigr) = 1 \text{.}
     \eeqn
 \end{df}
 
@@ -408,7 +417,7 @@
     Невозмущенное движение системы $\m{x}_t \equiv \m{0}$ называется асимптотически стохастически устойчивым в целом, если оно стохастически устойчио и, кроме того, для всех $|\m{x}_0| < \infty$
 
     \beqn
-        \prob \biggl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \biggr) = 1 \text{.}
+        \prob \Bigl( \lim\limits_{t \to \infty} \bigl| \m{x}^{\m{x}_0, t_0}_t \bigr| = 0 \Bigr) = 1 \text{.}
     \eeqn
 \end{df}
 
@@ -450,8 +459,8 @@
 
 \beq{eq:3/3/2}
 \begin{split}
-    \funcV(\m{x}_t, t) - \funcV(\m{x}_{t_0}, t_0) &= \int\limits_{t_0}^t L\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\tau + \\
-    &+ \sum\limits_{i=1}^m \int\limits_{t_0}^t \m{G}\idxB{i}_0\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\m{f}\idxB{i}_\tau \text{ с вероятностью 1,}
+    \funcV(\m{x}_t, t) &- \funcV(\m{x}_{t_0}, t_0) = \int\limits_{t_0}^t L\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\tau~+ \\
+    &+\sum\limits_{i=1}^m \int\limits_{t_0}^t \m{G}\idxB{i}_0\bigl\{ \funcV(\m{x}_\tau, \tau) \bigr\}\,d\m{f}\idxB{i}_\tau \text{ с вероятностью 1,}
 \end{split}
 \eeq
 
@@ -459,7 +468,7 @@
 
 \beq{eq:3/3/3}
 \begin{split}
-    L\argEmpty = \partdiff{\argEmpty}{t} &+ \sum\limits_{i=1}^n \m{a}\idxB{i}(\m{x}, t) \partdiff{\argEmpty}{\m{x}\idxB{i}} + \\
+    L\argEmpty = \partdiff{\argEmpty}{t} &+ \sum\limits_{i=1}^n \m{a}\idxB{i}(\m{x}, t) \partdiff{\argEmpty}{\m{x}\idxB{i}}~+ \\
     &+ \frac{1}{2}\sum_{j=1}^m \overset{n}{\sum\limits_{l=1}\sum\limits_{l=1}} \m{\Sigma}\idxB{lj}(\m{x}, t) \m{\Sigma}\idxB{ij}(\m{x}, t) \partdiffsecond{\argEmpty}{\m{x}\idxB{l}}{\m{x}\idxB{i}}
 \end{split}
 \eeq
@@ -493,13 +502,13 @@
 и, следовательно, для всех $T > t_0$ и $\delta > 0$
 
 \beq{eq:3/3/8}
-    \prob\Biggl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Biggr) \leqslant \frac{1}{\delta} \funcV(\m{x}_{t_0}, t_0) \text{.}
+    \prob\Bigl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Bigr) \leqslant \frac{1}{\delta} \funcV(\m{x}_{t_0}, t_0) \text{.}
 \eeq
 
 Из последнего неравенства, непрерывности $\funcV(\m{x}, t)$ и того, что $\funcV(\m{0}, t) = 0$, получаем:
 
 \beq{eq:3/3/9}
-    \lim\limits_{\m{x}_0 \to \m{0}} \prob\Biggl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Biggr) = 0 \text{.}
+    \lim\limits_{\m{x}_0 \to \m{0}} \prob\Bigl( \sup\limits_{t_0 \leqslant t \leqslant T} \funcV(\m{x}_t, t) \geqslant \delta \Bigr) = 0 \text{.}
 \eeq
 
 Далее, если предположить, что при некоторых постоянных $p$, $k_1$ и $k_2$

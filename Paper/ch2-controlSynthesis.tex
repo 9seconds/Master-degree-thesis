@@ -223,7 +223,7 @@
 
 \beq{eq:2/2/2}
 \begin{split}
-    - \partdiff{\optF}{t} =& \frac{1}{2} \m{x}^T(t)\m{Q}(t)\m{x}(t) + \frac{1}{2} {\optU}^T(t)\m{R}(t)\optU(t) + \\
+    - \partdiff{\optF}{t} &= \frac{1}{2} \m{x}^T(t)\m{Q}(t)\m{x}(t) + \frac{1}{2} {\optU}^T(t)\m{R}(t)\optU(t)~+ \\
     &+ \biggl(\partdiff{\optF}{\m{x}}\biggr)^T\bigl( \m{A}(t)\m{x}(t) + \m{B}(t)\optU(t) \bigr) \text{.}
 \end{split}
 \eeq
@@ -258,7 +258,7 @@
 
 \beq{eq:2/2/7}
 \begin{split}
-    - \genericdiff{\m{P}(t)}{t} =& -\m{P}(t)\m{B}(t)\m{R}^{-1}(t)\m{B}^T(t)\m{P}(t) + \m{P}(t)\m{A}(t) + \\
+    - \genericdiff{\m{P}(t)}{t} &= -\m{P}(t)\m{B}(t)\m{R}^{-1}(t)\m{B}^T(t)\m{P}(t) + \m{P}(t)\m{A}(t)~+ \\
     &+ \m{A}^T(t)\m{P}(t) + \m{Q}(t)
 \end{split}
 \eeq
@@ -288,7 +288,7 @@
 Калман\cite{KALMAN1} показал, что при $T \to \infty$ для полностью управляемой линейной стационарной системы и показателя качества
 
 \beqn
-    \funcF = \frac{1}{2} \int\limits_0^\infty \bigl[ \m{x}^T(\tau)\m{Q} \m{x}(\tau) + \m{u}^T(t)\m{R} \m{u}(\tau) \bigr]\,d\tau \text{,}
+    \funcF = \frac{1}{2} \int\limits_0^\infty \bigl[ \m{x}^T(\tau)\m{Q} \m{x}(\tau) + \m{u}^T(\tau)\m{R} \m{u}(\tau) \bigr]\,d\tau \text{,}
 \eeqn
 
 где $\m{Q}$ и $\m{R}$~--- симметричные, положительно определенные постоянные матрицы, справедливо условие $\lim\limits_{T \to \infty}\dot{\m{P}}(t) = 0$ и, таким образом, матричное уравнение Риккати~\ref{eq:2/2/7} сводится к нелинейному матричному алгебраическому уравнению
@@ -314,7 +314,7 @@
 \eeq
 
 \bteo{teo:2}
-    Функция $\funcF(s)$, определяемая уравнением~\ref{eq:2/2/12} обладает тем свойством, что при всех частотах $\omega$ справедливо, что
+    Функция $\funcT(s)$, определяемая уравнением~\ref{eq:2/2/12} обладает тем свойством, что при всех частотах $\omega$ справедливо
     \beq{eq:2/2/13}
         \bigl| 1 + \funcT(j\omega) \bigr| > 1 \text{.}
     \eeq
@@ -343,7 +343,10 @@
 или
 
 \beq{eq:2/2/16}
-    \m{H}^T(-s)\m{P}\m{B} + \m{H}^T(-s)\m{P}\m{B}\m{B}^T\m{P}\m{H}(s) + \m{B}^T\m{P}\m{H}(s) = \m{H}^T(-s)\m{Q}\m{H}(s) \text{,}
+    \begin{split}
+        \m{H}^T(-s)\m{P}\m{B} &+ \m{H}^T(-s)\m{P}\m{B}\m{B}^T\m{P}\m{H}(s)~+\\
+        &+ \m{B}^T\m{P}\m{H}(s) = \m{H}^T(-s)\m{Q}\m{H}(s) \text{,}
+    \end{split}
 \eeq
 
 так как положительно определенную матрицу $Q$ можно представить в виде\cite{BELLMAN2}
@@ -495,7 +498,7 @@
 
 \beq{eq:2/3/11}
 \begin{split}
-    H & = -\frac{1}{2} \bigl( \m{z}(t) - \m{C}(t)\m{x}(t) \bigr)^T\m{Q}(t)\bigl( \m{z}(t) - \m{C}(t)\m{x}(t) \bigr) - \\
+    H &= -\frac{1}{2} \bigl( \m{z}(t) - \m{C}(t)\m{x}(t) \bigr)^T\m{Q}(t)\bigl( \m{z}(t) - \m{C}(t)\m{x}(t) \bigr)~-\\
     &- \frac{1}{2} \bigl( \m{u}^T(t)\m{R}(t)\m{u}(t) \bigr) + \biggl( \bigl(\m{A}(t)\m{x}(t) \bigr)^T + \bigl(\m{B}(t)\m{x}(t) \bigr)^T \biggr)\m{\psi}(t)
 \end{split}
 \eeq
@@ -533,7 +536,7 @@
         \item
             $\partlinediff{\funcV}{t}$ непрерывная по $\m{x}$ и $t$, а $\partlinediff{\funcV}{\m{x}}$ или непрерывная по $\m{x}$ и $t$, или удовлетворяет условию
             \beq{eq:2/4/1}
-                \lim\limits_{t \to \tau-0} \Bigl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^Tf \Bigr] = \lim\limits_{t \to \tau+0} \Bigl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^Tf \Bigr]
+                \lim\limits_{t \to \tau-0} \Biggl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^Tf \Biggr] = \lim\limits_{t \to \tau+0} \Biggl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^Tf \Biggr]
             \eeq
             в любой момент времени $t = \tau$, когда $\partlinediff{\funcV}{\m{x}}$ или $f(\m{x}, \m{u}, t)$ разрывны.
 
@@ -541,7 +544,7 @@
             Для каждого $\m{x} \in \setV$ в каждый момент времени $t$ функция Гамильтона $H(\m{x}, \m{u}, t, \partlinediff{\funcV}{\m{x}})$ имеет абсолютный минимум при $\m{u} = \optU$ из множества допустимых функций управления. Кроме того, управление $\optU(t)$ определяет единственную траекторию системы $\optX(t)$.
 
         \item
-            На конечном множестве $\setS$ $\funcV(\m{x}, t) = 0$.
+            На конечном множестве $\setS$ функция $\funcV(\m{x}, t) = 0$.
     \eenum
 
     Тогда $\funcV(\m{x}, t) = \optF(\m{x}, t)$ при всех допустимых функциях управления, которые переводят изображающую точку из состояния $\m{x}_1$ в $\setS$, не покидая области $\setV$. Далее оптимальное управление с обратной связью $\optU(\m{x}, t)$ можно получить, решая соответствующее уравнение Беллмана.
@@ -554,8 +557,8 @@
 
 \beq{eq:2/4/2}
 \begin{split}
-    0 =& \partdiff{\funcV}{t} + \Bigl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^T f(\m{x}, \optU, t) + \funcL(\m{x}, \optU, t) \Bigr] < \\
-       & < \partdiff{\funcV}{t} + \Bigl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^T f(\m{x}, \m{u}, t) + \funcL(\m{x}, \m{u}, t) \Bigr]
+    0 &= \partdiff{\funcV}{t} + \Biggl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^T f(\m{x}, \optU, t) + \funcL(\m{x}, \optU, t) \Biggr]~<\\
+       & < \partdiff{\funcV}{t} + \Biggl[ \biggl(\partdiff{\funcV}{\m{x}}\biggr)^T f(\m{x}, \m{u}, t) + \funcL(\m{x}, \m{u}, t) \Biggr] \text{.}
 \end{split}
 \eeq
 
@@ -563,7 +566,7 @@
 
 \beq{eq:2/4/3}
 \begin{split}
-    \int\limits_{t_1}^{t_2} \Bigl[ \partdiff{\funcV(\optX, t)}{t} +& \biggl(\partdiff{\funcV(\optX, t)}{\m{x}}\biggr)^T f(\optX, \optU, t) \Bigr]\,dt + \int\limits_{t_1}^{t_2} \funcL(\optX, \optU, t)\,dt = \\
+    \int\limits_{t_1}^{t_2} \Biggl[ \partdiff{\funcV(\optX, t)}{t} &+ \biggl(\partdiff{\funcV(\optX, t)}{\m{x}}\biggr)^T f(\optX, \optU, t) \Biggr]\,dt + \int\limits_{t_1}^{t_2} \funcL(\optX, \optU, t)\,dt~= \\
     &= \int\limits_{t_1}^{t_2^{*}} \biggl[ \genericdiff{\funcV}{t} \biggr]_{\optU, t}\,dt + \int\limits_{t_1}^{t_2^{*}} \funcL(\optX, \optU, t)\,dt = 0 \text{.}
 \end{split}
 \eeq
@@ -571,7 +574,7 @@
 Рассмотрим теперь интеграл
 
 \beq{eq:2/4/4}
-    W \eqdef \int\limits_{t_1}^{t_2^{*}} \Bigl[ \partdiff{\funcV}{t} + \biggl(\partdiff{\funcV}{\m{x}}\biggr)^T f(\m{x}, \m{u}, t) + \funcL(\m{x}, \m{u}, t) \Bigr]\,dt \text{.}
+    W \eqdef \int\limits_{t_1}^{t_2^{*}} \Biggl[ \partdiff{\funcV}{t} + \biggl(\partdiff{\funcV}{\m{x}}\biggr)^T f(\m{x}, \m{u}, t) + \funcL(\m{x}, \m{u}, t) \Biggr]\,dt \text{.}
 \eeq
 
 Далее допустим, что сочетание $\optU$ и $\optX$ является единственным, которое доставляет абсолютный минимум величине $W$, равный в соответствии с условием~\ref{eq:2/4/3} нулю. Если это неверно, то найдутся другие $\m{u}(t) \neq \optU(t)$ и $\m{x}(t) \neq \optX(t)$, которые сделают выражение~\ref{eq:2/4/4} равным нулю. Однако из условия~\ref{eq:2/4/2} следует, что подынтегральное выражение~\ref{eq:2/4/4} всегда положительно. Таким образом, чтобы обратить $W$ в нуль, указанное подынтегральное выражение должно равняться нулю на всем интервале $[t_1, t_2]$. Из условий~\ref{eq:2/4/2} следует, что сделать это может лишь пара $\optU(t)$ и $\optX(t)$.
