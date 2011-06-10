@@ -35,8 +35,10 @@
 \usepackage{listings}
 \usepackage[font=it,labelsep=period,format=hang]{caption}
 \usepackage{mathtext}
+\usepackage{multirow}
 
-
+\usepackage{array}
+\newcolumntype{s}[1]{>{\centering}p{#1}}
 
 \usepackage{microtype}
 \SetProtrusion
@@ -89,6 +91,7 @@ family = cmr
 \DeclareMathOperator{\diag}{\mathrm{diag}}
 \DeclareMathOperator{\tr}{\mathrm{tr}}
 
+\includeonly{titlepage}
 
 
 \begin{document}
