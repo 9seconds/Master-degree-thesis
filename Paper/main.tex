@@ -36,6 +36,7 @@
 \usepackage[font=it,labelsep=period,format=hang]{caption}
 \usepackage{mathtext}
 \usepackage{multirow}
+\usepackage{pdfpages}
 
 \usepackage{array}
 \newcolumntype{s}[1]{>{\centering}p{#1}}
@@ -256,6 +257,9 @@ family = cmr
 
 % краткое описание рассматриваемой темы
 \include{abstract}
+
+% рецензия и отзыв
+\includepdf[pages={1,2},fitpaper=false]{reviews}
 
 % содержание. генерируется автоматически
 \include{toc}
