@@ -10,7 +10,6 @@
 \usepackage{cmap}
 
 \usepackage[T2A]{fontenc}
-\DeclareSymbolFont{T2Aletters}{T2A}{cmr}{m}{it}
 \usepackage[utf8x]{inputenc}
 \usepackage[russian]{babel}
 \selectlanguage{russian}
@@ -21,11 +20,7 @@
 \usepackage{ragged2e}
 
 \usepackage{microtype}
-\SetProtrusion
-{
-encoding = T2A,
-family = cmr
-}
+\SetProtrusion{encoding=T2A,family=cmr}
 {
 « =  {1000,     },
 » =  {    , 1000},
@@ -64,9 +59,9 @@ family = cmr
 
 \newcommand{\underscore}[1]{\underline{\hspace*{#1cm}}}
 
-\newcommand{\header}[1]{\begin{center}{\fontsize{20pt}{10pt}\selectfont #1}\end{center}}
+\newcommand{\header}[1]{\begin{center}{\fontsize{20.74pt}{10pt}\selectfont #1}\end{center}}
 \newcommand{\subheader}[1]{\begin{center}{\fontsize{14pt}{12pt}\selectfont\center #1}\end{center}}
-\newcommand{\wtitle}[1]{\begin{center}{\fontsize{18pt}{14pt}\selectfont <<\textbf{#1}>>}\end{center}}
+\newcommand{\wtitle}[1]{\begin{center}{\fontsize{17.28pt}{14pt}\selectfont <<\textbf{#1}>>}\end{center}}
 
 \pagestyle{empty}
 
