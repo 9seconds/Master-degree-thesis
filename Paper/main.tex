@@ -36,7 +36,7 @@
 \usepackage[font=it,labelsep=period,format=hang]{caption}
 \usepackage{mathtext}
 \usepackage{multirow}
-\usepackage{pdfpages}
+\usepackage[final]{pdfpages}
 
 \usepackage{array}
 \newcolumntype{s}[1]{>{\centering}p{#1}}
@@ -259,7 +259,7 @@ family = cmr
 \include{abstract}
 
 % рецензия и отзыв
-\includepdf[pages={1,2},fitpaper=false]{reviews}
+\includepdf[pages={1,2},fitpaper=false,noautoscale=true]{reviews}
 
 % содержание. генерируется автоматически
 \include{toc}

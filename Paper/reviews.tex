@@ -18,6 +18,7 @@
 
 \usepackage{multirow}
 \usepackage{ragged2e}
+\usepackage[pdftex]{graphicx}
 
 \usepackage{microtype}
 \SetProtrusion{encoding=T2A,family=cmr}
@@ -58,10 +59,13 @@
 \begin{document}
 
 \newcommand{\underscore}[1]{\underline{\hspace*{#1cm}}}
+\newcommand{\dateline}{<<\underscore{0.7}>>~\underscore{2.5}~2011 г.}
 
 \newcommand{\header}[1]{\begin{center}{\fontsize{20.74pt}{10pt}\selectfont #1}\end{center}}
 \newcommand{\subheader}[1]{\begin{center}{\fontsize{14pt}{12pt}\selectfont\center #1}\end{center}}
 \newcommand{\wtitle}[1]{\begin{center}{\fontsize{17.28pt}{14pt}\selectfont <<\textbf{#1}>>}\end{center}}
+
+
 
 \pagestyle{empty}
 
@@ -88,7 +92,8 @@
     \begin{tabular}[t]{p{5cm}r}
         Научный руководитель & \\
         профессор, д.\,ф--м.\,н & \underscore{4}~Пакшин П.\,В. \\
-        & <<\underscore{0.5}>>~\underscore{2}~2011 г.
+%       профессор, д.\,ф--м.\,н & \multirow{-2}*{\includegraphics[scale=0.5]{pakshin_sign}}~~~~Пакшин П.\,В. \\
+        & \dateline
     \end{tabular}
 \end{flushright}
 
@@ -127,7 +132,8 @@
     \begin{tabular}[t]{p{5cm}r}
         Рецензент & \\
         профессор, д.\,ф--м.\,н & \underscore{4}~Баландин Д.\,В. \\
-        & <<\underscore{0.5}>>~\underscore{2}~2011 г.
+%       профессор, д.\,ф--м.\,н & \hspace{2.9cm}~Баландин Д.\,В. \\
+        & \dateline
     \end{tabular}
 \end{flushright}
 
