@@ -74,19 +74,19 @@
 %---   слайд 1: постановка основной задачи
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Постановка задачи}
+    \frametitle{Постановка задачи}
 
     Пусть физический объект описывается системой
 
-	\begin{equation}\label{eq:1}
-	    \dot{\mathbf{x}}(t) = \mathbf{A}(t)\mathbf{x}(t) + \mathbf{B}(t)\mathbf{u}(t) \text{.}
-	\end{equation}
+    \begin{equation}\label{eq:1}
+        \dot{\mathbf{x}}(t) = \mathbf{A}(t)\mathbf{x}(t) + \mathbf{B}(t)\mathbf{u}(t) \text{.}
+    \end{equation}
 
-	Требуется найти такое оптимальное управление $\mathbf{u}^*(t)$, при котором значение критерия качества было бы минимальным:
-	
-	\begin{equation}\label{eq:2}
-	    \mathcal{F} \bigl(  \mathbf{x}(t), \mathbf{u}^*(t)  \bigr) = \min_{\mathbf{u}(t) \in \Upsilon} \mathcal{F} \bigl(  \mathbf{x}(t), \mathbf{u}(t)  \bigr)  \text{.}
-	\end{equation}
+    Требуется найти такое оптимальное управление $\mathbf{u}^*(t)$, при котором значение критерия качества было бы минимальным:
+
+    \begin{equation}\label{eq:2}
+        \mathcal{F} \bigl(  \mathbf{x}(t), \mathbf{u}^*(t)  \bigr) = \min_{\mathbf{u}(t) \in \Upsilon} \mathcal{F} \bigl(  \mathbf{x}(t), \mathbf{u}(t)  \bigr)  \text{.}
+    \end{equation}
 \end{frame}
 
 
@@ -95,19 +95,19 @@
 %---   слайд 2: Синтез оптимального управления -- уравнение Беллмана
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Синтез оптимального управления}
-	\framesubtitle{Уравнение Беллмана}
+    \frametitle{Синтез оптимального управления}
+    \framesubtitle{Уравнение Беллмана}
 
     Пусть критерий качества задан в виде
-    
+
     \begin{equation}\label{eq:3}
-    	\mathcal{F} = \int\limits_{t_1}^{t_2} \mathsf{L}(\mathbf{x}, \mathbf{u}, t)\,dt \text{.}
+        \mathcal{F} = \int\limits_{t_1}^{t_2} \mathsf{L}(\mathbf{x}, \mathbf{u}, t)\,dt \text{.}
     \end{equation}
-    
+
     Тогда необходимое условие оптимальности запишется как
-    
+
     \begin{equation}\label{eq:4}
-    	\underset{\mathbf{u}(t) \in \Upsilon}{\min} \biggl\{ \biggl[ \frac{d \mathcal{F}^*}{d t} \biggr]_{\mathbf{u}, t} + \mathsf{L}\bigl(  \mathbf{x}(\mathbf{u}, t), \mathbf{u}, t  \bigr) \biggr\} = 0 \text{.}
+        \underset{\mathbf{u}(t) \in \Upsilon}{\min} \biggl\{ \biggl[ \frac{d \mathcal{F}^*}{d t} \biggr]_{\mathbf{u}, t} + \mathsf{L}\bigl(  \mathbf{x}(\mathbf{u}, t), \mathbf{u}, t  \bigr) \biggr\} = 0 \text{.}
     \end{equation}
 \end{frame}
 
@@ -118,31 +118,31 @@
 %---            ный критерий качества
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Синтез оптимального управления}
-	\framesubtitle{Уравнение Беллмана с квадратичным критерием качества}\small
+    \frametitle{Синтез оптимального управления}
+    \framesubtitle{Уравнение Беллмана с квадратичным критерием качества}\small
 
     Пусть критерий качества задан в виде
-    
+
     \begin{equation}\label{eq:5}
-    	\mathcal{F} = \frac{1}{2} \mathbf{x}_2^T \mathbf{M} \mathbf{x}_2 + \frac{1}{2} \int\limits_{t_1}^{t_2} \bigl[ \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + \mathbf{u}^T(\tau)\mathbf{R}(\tau)\mathbf{u}(\tau) \bigr]\,d\tau \text{.}
+        \mathcal{F} = \frac{1}{2} \mathbf{x}_2^T \mathbf{M} \mathbf{x}_2 + \frac{1}{2} \int\limits_{t_1}^{t_2} \bigl[ \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + \mathbf{u}^T(\tau)\mathbf{R}(\tau)\mathbf{u}(\tau) \bigr]\,d\tau \text{.}
     \end{equation}
-    
+
     Тогда оптимальное управление $\mathbf{u}^*(t)$ может быть синтезировано следующим образом:
-    
+
     \begin{equation}\label{eq:6}
-    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t)\mathbf{x}(t) \text{,}
+        \mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t)\mathbf{x}(t) \text{,}
     \end{equation}
-    
+
     где матрица $\mathbf{P}(t)$ может быть найдена из уравнения Риккати
-    
+
     \begin{equation}\label{eq:7}
-    	\begin{cases}
-    		\begin{split}
-    			- \frac{d \mathbf{P}(t)}{dt} =& -\mathbf{P}(t)\mathbf{B}(t)\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t) + \mathbf{P}(t)\mathbf{A}(t) + \\
-    			&+ \mathbf{A}^T(t)\mathbf{P}(t) + \mathbf{Q}(t) \text{;}
-			\end{split} \\
-			\mathbf{P}(t_2) = \mathbf{M} \text{.}
-		\end{cases}    
+        \begin{cases}
+            \begin{split}
+                - \frac{d \mathbf{P}(t)}{dt} =& -\mathbf{P}(t)\mathbf{B}(t)\mathbf{R}^{-1}(t)\mathbf{B}^T(t)\mathbf{P}(t) + \mathbf{P}(t)\mathbf{A}(t) + \\
+                &+ \mathbf{A}^T(t)\mathbf{P}(t) + \mathbf{Q}(t) \text{;}
+            \end{split} \\
+            \mathbf{P}(t_2) = \mathbf{M} \text{.}
+        \end{cases}
     \end{equation}
 \end{frame}
 
@@ -153,25 +153,25 @@
 %---            ный случай
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Синтез оптимального управления}
-	\framesubtitle{Уравнение Беллмана при $T \to \infty$}
+    \frametitle{Синтез оптимального управления}
+    \framesubtitle{Уравнение Беллмана при $T \to \infty$}
 
     Пусть критерий качества задан в виде
-    
+
     \begin{equation}\label{eq:8}
-    	\mathcal{F} = \frac{1}{2} \int\limits_0^\infty \bigl[ \mathbf{x}^T(\tau)\mathbf{Q} \mathbf{x}(\tau) + \mathbf{u}^T(t)\mathbf{R} \mathbf{u}(\tau) \bigr]\,d\tau \text{.}
+        \mathcal{F} = \frac{1}{2} \int\limits_0^\infty \bigl[ \mathbf{x}^T(\tau)\mathbf{Q} \mathbf{x}(\tau) + \mathbf{u}^T(t)\mathbf{R} \mathbf{u}(\tau) \bigr]\,d\tau \text{.}
     \end{equation}
-    
+
     Тогда оптимальное управление $\mathbf{u}^*(t)$ может быть синтезировано следующим образом:
-    
+
     \begin{equation}\label{eq:9}
-    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P}\mathbf{x}(t) \text{,}
+        \mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P}\mathbf{x}(t) \text{,}
     \end{equation}
-    
+
     где матрица $\mathbf{P}$ может быть найдена из нелинейного алгебраического матричного уравнения Риккати
-    
+
     \begin{equation}\label{eq:10}
-    	-\mathbf{P}\mathbf{B}\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P} + \mathbf{P}\mathbf{A} + \mathbf{A}^T\mathbf{P} + \mathbf{Q} = \mathbf{0} \text{.}    
+        -\mathbf{P}\mathbf{B}\mathbf{R}^{-1}\mathbf{B}^T\mathbf{P} + \mathbf{P}\mathbf{A} + \mathbf{A}^T\mathbf{P} + \mathbf{Q} = \mathbf{0} \text{.}
     \end{equation}
 \end{frame}
 
@@ -181,19 +181,19 @@
 %---   слайд 5: Оптимальное стохастическое управление - постановка задачи
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Оптимальное стохастическое управление}
-	\framesubtitle{Постановка задачи}
-    
+    \frametitle{Оптимальное стохастическое управление}
+    \framesubtitle{Постановка задачи}
+
     Пусть система задана в виде процесса Ито:
 
     \begin{equation}\label{eq:11}
-    	d\mathbf{x}_t = \bigl( \mathbf{A}(t)\mathbf{x}_t + \mathbf{B}(t)\mathbf{u}(\mathbf{x}_t, t) \bigr)dt + \mathbf{C}(t)d\mathbf{w}_t \text{.}
+        d\mathbf{x}_t = \bigl( \mathbf{A}(t)\mathbf{x}_t + \mathbf{B}(t)\mathbf{u}(\mathbf{x}_t, t) \bigr)dt + \mathbf{C}(t)d\mathbf{w}_t \text{.}
     \end{equation}
-    
+
     Тогда оптимальное управление $\mathbf{u}^*(t)$ синтезируется из условия минимума функционала качества:
-    
+
     \begin{equation}\label{eq:12}
-    	\mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ Q(\mathbf{x}_\tau, \tau) + \int\limits_s^\tau F(\mathbf{x}_t, \mathbf{u}, t)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
+        \mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ Q(\mathbf{x}_\tau, \tau) + \int\limits_s^\tau F(\mathbf{x}_t, \mathbf{u}, t)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
     \end{equation}
 \end{frame}
 
@@ -204,31 +204,31 @@
 %---            качества
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Оптимальное стохастическое управление}
-	\framesubtitle{Синтез оптимального управления}\small
-    
+    \frametitle{Оптимальное стохастическое управление}
+    \framesubtitle{Синтез оптимального управления}\small
+
     Пусть критерий качества является квадратичным
 
     \begin{equation}\label{eq:13}
-    	\mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ \mathbf{x}_T\mathbf{R}\mathbf{x}_T^T + \int\limits_s^T \bigr( \mathbf{x}_t^T\mathbf{C}(t)\mathbf{x}_t + \mathbf{u}^T\mathbf{P}(t)\mathbf{u} \bigl)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
+        \mathcal{F}(\mathbf{x}, \mathbf{u}, s) = \mathbb{E} \biggl\{ \mathbf{x}_T\mathbf{R}\mathbf{x}_T^T + \int\limits_s^T \bigr( \mathbf{x}_t^T\mathbf{C}(t)\mathbf{x}_t + \mathbf{u}^T\mathbf{P}(t)\mathbf{u} \bigl)\,dt~\biggm|~ \mathbf{x}_s = \mathbf{x} \biggr\} \text{.}
     \end{equation}
-    
+
     Тогда оптимальное управление можно получить $\mathbf{u}^*(t)$ следующим образом:
-    
+
     \begin{equation}\label{eq:14}
-    	\mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T(t)\mathbf{S}(t)\mathbf{x}(t) \text{,}
+        \mathbf{u}^*(\mathbf{x}, t) = -\mathbf{R}^{-1}\mathbf{B}^T(t)\mathbf{S}(t)\mathbf{x}(t) \text{,}
     \end{equation}
 
     где матрица $\mathbf{S}(t)$ находится из системы~\ref{eq:15}
 
     \begin{equation}\label{eq:15}
-    	\begin{cases}
-    		\begin{split}
-    			-\frac{d\mathbf{S}(t)}{dt} =&~\mathbf{A}^T(t)\mathbf{S}(t) - \mathbf{S}(t)\mathbf{A}(t) +\\
+        \begin{cases}
+            \begin{split}
+                -\frac{d\mathbf{S}(t)}{dt} =&~\mathbf{A}^T(t)\mathbf{S}(t) - \mathbf{S}(t)\mathbf{A}(t) +\\
                 &+ \mathbf{S}(t)\mathbf{B}(t)\mathbf{P}^{-1}(t)\mathbf{B}(t)\mathbf{S}(t) - \mathbf{C}(t) \text{;}
-			\end{split} \\
-			\mathbf{S}(T) = \mathbf{R} \text{.}
-		\end{cases}    
+            \end{split} \\
+            \mathbf{S}(T) = \mathbf{R} \text{.}
+        \end{cases}
     \end{equation}
 \end{frame}
 
@@ -238,9 +238,9 @@
 %---   слайд 7: Решение типовой задачи - постановка задачи
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Постановка задачи}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Постановка задачи}
+
     \begin{equation}\label{eq:16}
         \begin{cases}
             \dot{x}_1 = x_2 \text{,} \\
@@ -265,9 +265,9 @@
 %---   слайд 8: Решение типовой задачи - постановка задачи, точные значения
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Постановка задачи}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Постановка задачи}
+
     \begin{equation*}
         \mathbf{Q}(T) = \frac{1}{(300-t)^2}\begin{bmatrix}
             5 \,\cdotp 10^{-7}  & 0       & 0    \\
@@ -293,9 +293,9 @@
 %---   слайд 9: Решение типовой задачи - постановка задачи
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Программное обеспечение для проведения экспериментов}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Программное обеспечение для проведения экспериментов}
+
     \begin{enumerate}
         \item
             Программа написана на языке программирования \texttt{Java};
@@ -320,9 +320,9 @@
 %---   слайд 10: Решение типовой задачи - алгоритм 1, описание
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Описание алгоритма~\ref{alg:1}}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Описание алгоритма~\ref{alg:1}}
+
     \begin{alg}\label{alg:1}~
         \begin{enumerate}
             \item
@@ -340,9 +340,9 @@
 %---   слайд 11: Решение типовой задачи - алгоритм 1, результаты
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:1}}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:1}}
+
     \begin{figure}\center
         \input{fig_alg1}
         \label{fig:alg1}
@@ -355,9 +355,9 @@
 %---   слайд 12: Решение типовой задачи - алгоритм 2, описание
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Описание алгоритма~\ref{alg:2}}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Описание алгоритма~\ref{alg:2}}
+
     \begin{alg}\label{alg:2}~
         \begin{enumerate}
             \item
@@ -375,9 +375,9 @@
 %---   слайд 13: Решение типовой задачи - алгоритм 2, результаты
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:2}}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:2}}
+
     \begin{figure}\center
         \input{fig_alg2}
         \label{fig:alg2}
@@ -390,9 +390,9 @@
 %---   слайд 14: Решение типовой задачи - вторичный критерий качества
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Вторичный критерий качества}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Вторичный критерий качества}
+
     \begin{equation}\label{eq:18}
         \begin{split}
             \mathscr{S}(\mathbf{x}, t_i, t_{i+1}) =&~ \Biggl| \int\limits_{t_i}^{t_{i+1}} \bigl( \mathbf{x}^T(\tau)\mathbf{Q}(\tau)\mathbf{x}(\tau) + ru(\tau)^2 \bigr)\,d\tau -\\
@@ -407,9 +407,9 @@
 %---   слайд 15: Решение типовой задачи - алгоритм 3, описание
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Описание алгоритма~\ref{alg:3}}\small
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Описание алгоритма~\ref{alg:3}}\small
+
     \begin{alg}\label{alg:3}~
         \begin{enumerate}
             \item
@@ -436,9 +436,9 @@
 %---   слайд 16: Решение типовой задачи - алгоритм 3, результаты
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:3}}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:3}}
+
     \begin{figure}\center
         \input{fig_alg3}
         \label{fig:alg3}
@@ -451,9 +451,9 @@
 %---   слайд 17: Решение типовой задачи - алгоритм 4, описание
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Описание алгоритма~\ref{alg:4}}\footnotesize
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Описание алгоритма~\ref{alg:4}}\footnotesize
+
     \begin{alg}\label{alg:4}~
         \begin{enumerate}
             \item
@@ -480,9 +480,9 @@
 %---   слайд 18: Решение типовой задачи - алгоритм 4, результаты
 %-------------------------------------------------------------------------------
 \begin{frame}
-	\frametitle{Решение типовой задачи}
-	\framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:4}}
-    
+    \frametitle{Решение типовой задачи}
+    \framesubtitle{Решение задачи с помощью алгоритма~\ref{alg:4}}
+
     \begin{figure}\center
         \input{fig_alg4}
         \label{fig:alg4}
@@ -524,7 +524,7 @@
 %-------------------------------------------------------------------------------
 \begin{frame}
     \frametitle{Список литературы}
-    
+
     \begin{itemize}
         \item
             \emph{Беллман Р.}~Динамическое программирование.~--- М.:~ Изд-во иностранной лит., 1960.~--- 472~с.;
