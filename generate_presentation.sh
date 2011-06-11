@@ -14,6 +14,12 @@ PDFTEX="`which pdflatex` \"${GENOPTS}\""
 
 cd Presentation
 
+echo "- Converting EPS to PDF"
+for eps in *.eps
+do
+    epstopdf ${eps}
+done
+
 echo "- Generating ${DOCMAIN}.pdf"
 ${PDFTEX} ${MAINFILE} > /dev/null && rm -f ${MAINFILE}.pdf
 ${PDFTEX} ${MAINFILE} > /dev/null && mv -f ${MAINFILE}.pdf ../${DOCMAIN}.pdf
@@ -28,6 +34,6 @@ ${PDFTEX} ${HANDOUTFILE} > /dev/null && rm -rf ${HANDOUTFILE}.pdf
 ${PDFTEX} ${HANDOUTFILE} > /dev/null && mv -f  ${HANDOUTFILE}.pdf ../${DOCHANDOUT}.pdf
 
 echo "+ Cleaning temporary files"
-rm -rf ${HANDOUTFILE}.tex *.{log,aux,dvi,thm,out,snm,toc,nav,xml}
+rm -rf ${HANDOUTFILE}.tex *.{log,aux,dvi,thm,out,snm,toc,nav,xml,pdf}
 
 echo "Done"
