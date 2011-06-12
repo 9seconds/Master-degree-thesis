@@ -28,12 +28,7 @@ rm -rf ${READYDIR}
 
 
 echo "- Generating paper"
-if [ "signed" = "$1" ]
-then
-    ./${GENPAPER}.sh signed > /dev/null
-else
-    ./${GENPAPER}.sh        > /dev/null
-fi
+./${GENPAPER}.sh $1 > /dev/null
 
 
 
