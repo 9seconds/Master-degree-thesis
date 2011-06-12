@@ -8,8 +8,10 @@
 
 READYDIR="Ready"
 
-GENPAPER="generate_paper"
-GENPRES="generate_presentation"
+GENTPL="generate"
+GENPAPER="${GENTPL}_paper"
+GENPRES="${GENTPL}_presentation"
+GENSPEECH="${GENTPL}_speech"
 
 
 
@@ -41,6 +43,15 @@ fi
 
 echo "- Generating presentations"
 ./${GENPRES}.sh > /dev/null
+
+
+
+# ------------------------------------------------------------------------------
+
+
+
+echo "- Generating speech"
+./${GENSPEECH}.sh > /dev/null
 
 
 
